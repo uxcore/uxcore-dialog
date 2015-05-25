@@ -4,6 +4,7 @@
  */
 import React from 'react';
 import Popup from '../../uxcore-popup/index';
+import '../style/dialog.less';
 
 function noop(){}
 
@@ -55,32 +56,50 @@ class Dialog extends React.Component {
             });
         }
     }
+
+    _createClsName(name){
+        return `${this.props.jsxclsPrefix}-${name}`;
+    }
+
     render(){
         var state = this.state;
-        console.log(state, this.props)
-        return (
-            <Popup jsxvisible={state.visible} jsxwidth={400}>
-                <div className={'content'}>
-                    <div className={'header'}>
-                        <div className={'title'}>title</div>
-                        <div className={'close'} onClick={this._onClose.bind(this)}>x</div>
+        console.log(state, this.props);
+        var content = [];
+        var outerStyle = {
+            display: state.visible ? 'block': 'none'
+        };
+        var overlayStyle = {
+            display: this.props.jsxoverlay? 'block': 'none'
+        };
+        content.push(
+            <div style={outerStyle}>
+                <Popup jsxvisible={state.visible} jsxwidth={400} jsxcls='uxcore-dialog'>
+                    <div className={this._createClsName('content')}>
+                        <div className={this._createClsName('header')}>
+                            <div className={this._createClsName('title')}>title</div>
+                            <div className={this._createClsName('close')} onClick={this._onClose.bind(this)}>x</div>
+                        </div>
+                        <div className={this._createClsName('body')}>body</div>
+                        <button onClick={this._onCancel.bind(this)}>cancel</button>
+                        <button onClick={this._onConfirm.bind(this)}>confirm</button>
                     </div>
-                    <div className={'body'}>body</div>
-                    <button onClick={this._onCancel.bind(this)}>cancel</button>
-                    <button onClick={this._onConfirm.bind(this)}>confirm</button>
-                </div>
-            </Popup>
+                </Popup>
+                <div className={this._createClsName('overlay')} style={overlayStyle}></div>
+            </div>
         );
+        return content[0];
     }
 }
 Dialog.displayName = 'uxcore-dialog';
 Dialog.defaultProps = {
+    jsxclsPrefix: 'uxcore-dialog',
     jsxvisible: false,
     cancelBtn: true,
     confirmBtn: true,
     onBeforeClose: noop,
     onClose: noop,
-    onShow: noop
+    onShow: noop,
+    jsxoverlay: true
 };
 
 export default Dialog;
