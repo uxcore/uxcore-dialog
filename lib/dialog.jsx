@@ -70,6 +70,7 @@ class Dialog extends React.Component {
         });
     }
     render(){
+        console.log(this)
         var state = this.state;
         var props = this.props;
         var outerStyle = {
@@ -89,13 +90,13 @@ class Dialog extends React.Component {
             properties.onDragEnd = this._onHandleDragEnd.bind(this);
         }
         var confirmBtn, cancelBtn, overlay;
-        if (this.props.confirmBtn) {
-            confirmBtn = <button onClick={this._onConfirm.bind(this)}>confirm</button>;
+        if (props.jsxconfirm) {
+            confirmBtn = <button onClick={this._onConfirm.bind(this)}>{typeof props.jsxconfirm === 'string' ? props.jsxconfirm: 'confirm'}</button>;
         }
-        if (this.props.cancelBtn) {
-            cancelBtn = <button onClick={this._onCancel.bind(this)}>cancel</button>;
+        if (props.jsxcancel) {
+            cancelBtn = <button onClick={this._onCancel.bind(this)}>{typeof props.jsxcancel === 'string' ? props.jsxcancel: 'cancel'}</button>;
         }
-        if (this.props.jsxoverlay) {
+        if (props.jsxoverlay) {
             overlay = <div className={this._createClsName('overlay')}></div>;
         }
         return (
@@ -103,10 +104,10 @@ class Dialog extends React.Component {
                 <Popup {...properties}>
                     <div className={this._createClsName('content')}>
                         <div className={this._createClsName('header')}>
-                            <div className={this._createClsName('title')} >title</div>
+                            <div className={this._createClsName('title')} >{props.jsxtitle}</div>
                             <div className={this._createClsName('close')} onClick={this._onClose.bind(this)}>x</div>
                         </div>
-                        <div className={this._createClsName('body')}>body</div>
+                        <div className={this._createClsName('body')}>{props.children}</div>
                         {cancelBtn}
                         {confirmBtn}
                     </div>
@@ -124,27 +125,35 @@ Dialog.propTypes = {
         React.PropTypes.number
     ]),
     jsxclsPrefix    : React.PropTypes.string,
+    jsxtitle        : React.PropTypes.string,
     jsxvisible      : React.PropTypes.bool,
-    cancelBtn       : React.PropTypes.bool,
-    confirmBtn      : React.PropTypes.bool,
+    jsxcancel       : React.PropTypes.oneOfType([
+        React.PropTypes.string,
+        React.PropTypes.bool
+    ]),
+    jsxconfirm      : React.PropTypes.oneOfType([
+        React.PropTypes.string,
+        React.PropTypes.bool
+    ]),
+    jsxoverlay      : React.PropTypes.bool,
+    jsxdraggable    : React.PropTypes.bool,
     onBeforeClose   : React.PropTypes.func,
     onClose         : React.PropTypes.func,
-    onShow          : React.PropTypes.func,
-    jsxoverlay      : React.PropTypes.bool,
-    jsxdraggable    : React.PropTypes.bool
+    onShow          : React.PropTypes.func
 };
 Dialog.defaultProps = {
     jsxwidth        : 400,
     jsxheight       : 'auto',
     jsxclsPrefix    : 'uxcore-dialog',
+    jsxtitle        : 'title',
     jsxvisible      : false,
-    cancelBtn       : true,
-    confirmBtn      : true,
+    jsxcancel       : true,
+    jsxconfirm      : true,
+    jsxoverlay      : true,
+    jsxdraggable    : false,
     onBeforeClose   : noop,
     onClose         : noop,
-    onShow          : noop,
-    jsxoverlay      : true,
-    jsxdraggable    : true
+    onShow          : noop
 };
 
 export default Dialog;

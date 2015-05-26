@@ -29,6 +29,12 @@ class MyControl extends React.Component {
                 <Dialog
                     jsxvisible={this.state.visible}
                     >
+                    <h3>content</h3>
+                    <ul>
+                        <li>example1</li>
+                        <li>example2</li>
+                        <li>example3</li>
+                    </ul>
                 </Dialog>
             </div>
         )
