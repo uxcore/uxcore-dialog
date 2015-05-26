@@ -4,6 +4,7 @@
  */
 import React from 'react';
 import Popup from '../../uxcore-popup/index';
+import domAlign from 'dom-align';
 import '../style/dialog.less';
 
 function noop(){}
@@ -60,46 +61,90 @@ class Dialog extends React.Component {
     _createClsName(name){
         return `${this.props.jsxclsPrefix}-${name}`;
     }
-
+    _onHandleDragStart(e){
+    }
+    _onHandleDragEnd(e){
+        domAlign(React.findDOMNode(this.refs.dialog.refs.popup), window, {
+            points: ['bl', 'tl'],
+            offset: [e.clientX, e.clientY]
+        });
+    }
     render(){
         var state = this.state;
-        console.log(state, this.props);
-        var content = [];
+        var props = this.props;
         var outerStyle = {
             display: state.visible ? 'block': 'none'
         };
-        var overlayStyle = {
-            display: this.props.jsxoverlay? 'block': 'none'
+        var properties = {
+            jsxcls: 'uxcore-dialog',
+            ref: 'dialog',
+            jsxvisible: state.visible,
+            jsxwidth: props.jsxwidth,
+            jsxheight: props.jsxheight,
+            jsxpositionAdjust: !props.jsxdraggable,
+            draggable: props.jsxdraggable
         };
-        content.push(
+        if (props.jsxdraggable) {
+            properties.onDragStart = this._onHandleDragStart.bind(this);
+            properties.onDragEnd = this._onHandleDragEnd.bind(this);
+        }
+        var confirmBtn, cancelBtn, overlay;
+        if (this.props.confirmBtn) {
+            confirmBtn = <button onClick={this._onConfirm.bind(this)}>confirm</button>;
+        }
+        if (this.props.cancelBtn) {
+            cancelBtn = <button onClick={this._onCancel.bind(this)}>cancel</button>;
+        }
+        if (this.props.jsxoverlay) {
+            overlay = <div className={this._createClsName('overlay')}></div>;
+        }
+        return (
             <div style={outerStyle}>
-                <Popup jsxvisible={state.visible} jsxwidth={400} jsxcls='uxcore-dialog'>
+                <Popup {...properties}>
                     <div className={this._createClsName('content')}>
                         <div className={this._createClsName('header')}>
-                            <div className={this._createClsName('title')}>title</div>
+                            <div className={this._createClsName('title')} >title</div>
                             <div className={this._createClsName('close')} onClick={this._onClose.bind(this)}>x</div>
                         </div>
                         <div className={this._createClsName('body')}>body</div>
-                        <button onClick={this._onCancel.bind(this)}>cancel</button>
-                        <button onClick={this._onConfirm.bind(this)}>confirm</button>
+                        {cancelBtn}
+                        {confirmBtn}
                     </div>
                 </Popup>
-                <div className={this._createClsName('overlay')} style={overlayStyle}></div>
+                {overlay}
             </div>
         );
-        return content[0];
     }
 }
 Dialog.displayName = 'uxcore-dialog';
+Dialog.propTypes = {
+    jsxwidth        : React.PropTypes.number,
+    jsxheight       : React.PropTypes.oneOfType([
+        React.PropTypes.string,
+        React.PropTypes.number
+    ]),
+    jsxclsPrefix    : React.PropTypes.string,
+    jsxvisible      : React.PropTypes.bool,
+    cancelBtn       : React.PropTypes.bool,
+    confirmBtn      : React.PropTypes.bool,
+    onBeforeClose   : React.PropTypes.func,
+    onClose         : React.PropTypes.func,
+    onShow          : React.PropTypes.func,
+    jsxoverlay      : React.PropTypes.bool,
+    jsxdraggable    : React.PropTypes.bool
+};
 Dialog.defaultProps = {
-    jsxclsPrefix: 'uxcore-dialog',
-    jsxvisible: false,
-    cancelBtn: true,
-    confirmBtn: true,
-    onBeforeClose: noop,
-    onClose: noop,
-    onShow: noop,
-    jsxoverlay: true
+    jsxwidth        : 400,
+    jsxheight       : 'auto',
+    jsxclsPrefix    : 'uxcore-dialog',
+    jsxvisible      : false,
+    cancelBtn       : true,
+    confirmBtn      : true,
+    onBeforeClose   : noop,
+    onClose         : noop,
+    onShow          : noop,
+    jsxoverlay      : true,
+    jsxdraggable    : true
 };
 
 export default Dialog;
