@@ -5,7 +5,6 @@
 import React from 'react';
 import Popup from '../../uxcore-popup/index';
 import domAlign from 'dom-align';
-import '../style/dialog.less';
 
 function noop(){}
 
@@ -13,7 +12,8 @@ class Dialog extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            visible: props.visible
+            visible : props.visible,
+            isDragging  : false
         }
     }
     _onClose(){
@@ -62,8 +62,15 @@ class Dialog extends React.Component {
         return `${this.props.jsxclsPrefix}-${name}`;
     }
     _onHandleDragStart(e){
+        this.setState({
+            isDragging: true
+        });
     }
     _onHandleDragEnd(e){
+        console.log('dragend')
+        this.setState({
+            isDragging: false
+        });
         domAlign(React.findDOMNode(this.refs.dialog.refs.popup), window, {
             points: ['bl', 'tl'],
             offset: [e.clientX, e.clientY]
@@ -85,6 +92,9 @@ class Dialog extends React.Component {
             jsxpositionAdjust: !props.jsxdraggable,
             draggable: props.jsxdraggable
         };
+        if (state.isDragging) {
+            properties.jsxcls += ' dragging'
+        }
         if (props.jsxdraggable) {
             properties.onDragStart = this._onHandleDragStart.bind(this);
             properties.onDragEnd = this._onHandleDragEnd.bind(this);

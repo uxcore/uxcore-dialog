@@ -4,6 +4,11 @@
     border: 1px solid #000;
     border-radius: 3px;
     z-index: 10;
+    
+    &.dragging {
+        opacity: .6;
+        border-style: dashed;
+    }
 }
 .uxcore-dialog-overlay {
     position: fixed;
@@ -19,6 +24,6 @@
     .uxcore-dialog-close {
         position: absolute;
         right: 5px;
-        top: 0px;
+        top: 0;
     }
 }
