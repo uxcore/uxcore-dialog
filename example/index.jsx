@@ -13,7 +13,7 @@ class MyControl extends React.Component {
             jsxconfirm: true,
             jsxcancel: true,
             jsxoverlay: true,
-            jsxdraggable: false
+            jsxdraggable: true
         };
     }
     handleTrigger(){

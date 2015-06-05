@@ -8,12 +8,15 @@ import domAlign from 'dom-align';
 
 function noop(){}
 
+let __pos = {};
+
 class Dialog extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             visible : props.visible,
-            isDragging  : false
+            isDragging  : false,
+            position: {}
         }
     }
     _onClose(){
@@ -62,18 +65,44 @@ class Dialog extends React.Component {
         return `${this.props.jsxclsPrefix}-${name}`;
     }
     _onHandleDragStart(e){
+        let dialog = this.dialog = React.findDOMNode(this.refs.dialog.refs.popup);
         this.setState({
             isDragging: true
         });
+        console.log('dragstart', {
+            x: e.clientX,
+            y: e.clientY
+        }, dialog.style);
+        this.originPos = {
+            x: parseInt(dialog.style.left, 10),
+            y: parseInt(dialog.style.top, 10)
+        };
+        this.originOffset = {
+            x: e.clientX,
+            y: e.clientY
+        };
+
+        this.handleDrag = this._onHandleDrag.bind(this);
+
+        window.addEventListener('mousemove', this.handleDrag, true);
     }
     _onHandleDragEnd(e){
-        console.log('dragend')
+        window.removeEventListener('mousemove', this.handleDrag, true);
+
         this.setState({
-            isDragging: false
+            isDragging: false,
+            style: {
+                left: this.originPos.x + e.clientX - this.originOffset.x,
+                top: this.originPos.y + e.clientY - this.originOffset.y
+            }
         });
-        domAlign(React.findDOMNode(this.refs.dialog.refs.popup), window, {
-            points: ['bl', 'tl'],
-            offset: [e.clientX, e.clientY]
+    }
+    _onHandleDrag(e){
+        this.setState({
+            style: {
+                left: this.originPos.x + e.clientX - this.originOffset.x,
+                top: this.originPos.y + e.clientY - this.originOffset.y
+            }
         });
     }
     render(){
@@ -89,15 +118,18 @@ class Dialog extends React.Component {
             jsxvisible: state.visible,
             jsxwidth: props.jsxwidth,
             jsxheight: props.jsxheight,
-            jsxpositionAdjust: !props.jsxdraggable,
-            draggable: props.jsxdraggable
+            jsxpositionAdjust: !props.jsxdraggable
+            //draggable: props.jsxdraggable
         };
         if (state.isDragging) {
             properties.jsxcls += ' dragging'
         }
         if (props.jsxdraggable) {
-            properties.onDragStart = this._onHandleDragStart.bind(this);
-            properties.onDragEnd = this._onHandleDragEnd.bind(this);
+            properties.onMouseDown = this._onHandleDragStart.bind(this);
+            properties.onMouseUp = this._onHandleDragEnd.bind(this);
+        }
+        if (state.style) {
+            properties.style = state.style;
         }
         var confirmBtn, cancelBtn, overlay;
         if (props.jsxconfirm) {
