@@ -9,7 +9,9 @@ module.exports = {
         './example/index.jsx'
     ],
     output: {
-        publicPath: 'http://localhost:9090/assets'
+        path: './build',
+        publicPath: '/assets/',
+        filename: 'bundle.js'
     },
     module: {
         loaders: [
@@ -35,6 +37,8 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
+    debug: true,
+    devtool: 'eval',
     devServer: {
         info: true,
         quiet: false,
