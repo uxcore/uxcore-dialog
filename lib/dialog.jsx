@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import RcDialog from 'rc-dialog';
-import assign from 'object-assign'; 
+import assign from 'object-assign';
 
 class Dialog extends React.Component {
     constructor(props) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import Dialog from '../index.js';
-var container;
 
 var DialogContent = React.createClass({
   getInitialState() {
