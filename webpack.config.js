@@ -5,13 +5,16 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: [
-        './example/index.jsx'
-    ],
+    entry: {
+        simple: './example/simple.jsx',
+        inline: './example/inline.jsx',
+        standalone: './example/standalone.jsx'
+    },
     output: {
         path: './build',
         publicPath: '/assets/',
-        filename: 'bundle.js'
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].[id].bundle.js'
     },
     module: {
         loaders: [
@@ -28,6 +31,10 @@ module.exports = {
             {
                 test: /\.less$/,
                 loader: 'style!css!less'
+            },
+            {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader:   'url?limit=10000&minetype=image/svg+xml'
             }
         ]
     },

@@ -6,17 +6,9 @@ import React from 'react';
 import RcDialog from 'rc-dialog';
 import assign from 'object-assign';
 
-class Dialog extends React.Component {
+class Dialog extends RcDialog {
     constructor(props) {
         super(props);
-    }
-    render(){
-        let props = this.props;
-        return (
-            <RcDialog {...props}>
-                {props.children}
-            </RcDialog>
-        );
     }
 }
 Dialog.displayName = 'uxcore-dialog';

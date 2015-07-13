@@ -1,7 +1,8 @@
+import '../style/kuma/src/less/kuma.less';
 import React from 'react';
 import Dialog from '../index.js';
 
-var DialogContent = React.createClass({
+let DialogContent = React.createClass({
   getInitialState() {
     return {
       value: ''
@@ -17,9 +18,7 @@ var DialogContent = React.createClass({
 
   render() {
     return <div>
-      <input onChange={this.onChange}
-
-        value={this.state.value}/>
+      <input onChange={this.onChange} value={this.state.value} className="kuma-input"/>
       <p>第二个弹出框内容</p>
       <p>第二个弹出框内容</p>
       <p>第二个弹出框内容</p>
@@ -28,9 +27,9 @@ var DialogContent = React.createClass({
       <p>第二个弹出框内容</p>
       <p>第二个弹出框内容</p>
       <div className="modal-footer">
-        <button className="btn" onClick={this.props.onClose} >Close</button>
-        <button className="btn" onClick={this.props.onDestroy} >destroy</button>
-        <button className="btn btn-primary" onClick={this.props.handleSave}>Save changes</button>
+        <button className="kuma-button kuma-button-mwhite" onClick={this.props.onClose}>Close</button>
+        <button className="kuma-button kuma-button-mwhite" onClick={this.props.onDestroy} >destroy</button>
+        <button className="kuma-button kuma-button-mblue" onClick={this.props.handleSave}>Save changes</button>
       </div>
     </div>;
   }
@@ -39,7 +38,8 @@ var DialogContent = React.createClass({
 var MyControl = React.createClass({
   getInitialState() {
     return {
-      visible: false
+      visible: false,
+      closable: true
     };
   },
 
@@ -72,20 +72,31 @@ var MyControl = React.createClass({
     }, 100);
   },
 
+  toggleClosable() {
+    this.setState({
+      closable: !this.state.closable
+    });
+  },
+
   render() {
     if (this.state.destroy) {
       return null;
     }
     return (
       <div>
-        <button className="btn btn-primary" onClick={this.handleTrigger}>show dialog</button>
+        <button className="kuma-button kuma-button-mblue" onClick={this.handleTrigger}>show dialog</button>
       &nbsp;&nbsp;&nbsp;
-        <button className="btn btn-primary" onClick={this.handleDestroy}>destroy</button>
+        <label>
+          <input type="checkbox" checked={this.state.closable} onChange={this.toggleClosable}/>
+          closable
+        </label>
+      &nbsp;&nbsp;&nbsp;
+        <button className="kuma-button kuma-button-mblue" onClick={this.handleDestroy}>destroy</button>
         <Dialog
           ref='dialog'
           title= "第二个弹框"
-          animation="zoom"
-          maskAnimation="fade"
+          mask={true}
+          closable={this.state.closable}
           visible={this.state.visible}
           onClose={this.handleClose}
           style={{width: 600}}
