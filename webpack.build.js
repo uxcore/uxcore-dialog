@@ -37,9 +37,9 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx'],
         alias: {
-            'react': 'react/dist/react.js'
+            'react': 'react/dist/react.min.js'
         }
     },
-    debug: true,
-    devtool: 'eval'
+    debug: false,
+    devtool: 'cheap-module-eval-source-map'
 };

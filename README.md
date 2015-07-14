@@ -10,7 +10,7 @@
 
 ## TL;DR
 
-### setup develop environment
+#### setup develop environment
 
 ```sh
 $ git clone https://github.com/uxcore/uxcore-dialog
@@ -18,13 +18,14 @@ $ cd uxcore-dialog
 $ npm install
 $ npm run dev
 ```
-then nav http://localhost:9090/example/ to see the demo
+nav http://localhost:9090/webpack-dev-server/example/ to see the demo
 
-deploy gh-pages
-
+#### deploy to gh-pages
 [refer to]( http://stackoverflow.com/questions/17643381/how-to-upload-my-angularjs-static-site-to-github-pages)
 ```sh
-git subtree push --prefix build origin gh-pages
+$ npm run build
+$ git add build & git commit -m 'update deploy files'
+$ npm run deploy
 ```
 
 ## Usage
