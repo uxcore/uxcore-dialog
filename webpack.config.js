@@ -12,7 +12,7 @@ module.exports = {
         standalone: './example/standalone.jsx'
     },
     output: {
-        publicPath: '',
+        publicPath: '/example',
         filename: '[name].bundle.js',
         chunkFilename: '[name].[id].bundle.js'
     },

@@ -4,7 +4,8 @@
   "description": "uxcore-dialog ui componment for react",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --colors --port  9090"
+    "dev": "webpack-dev-server --progress --colors --port  9090",
+    "build": "webpack --config webpack.build.js"
   },
   "repository": {
     "type": "git",
