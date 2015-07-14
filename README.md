@@ -20,6 +20,13 @@ $ npm run dev
 ```
 then nav http://localhost:9090/example/ to see the demo
 
+deploy gh-pages
+
+[refer to]( http://stackoverflow.com/questions/17643381/how-to-upload-my-angularjs-static-site-to-github-pages)
+```sh
+git subtree push --prefix build origin gh-pages
+```
+
 ## Usage
 
 ```js

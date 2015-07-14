@@ -12,20 +12,28 @@ module.exports = {
         standalone: './example/standalone.jsx'
     },
     output: {
-        path: './build',
-        publicPath: '/',
+        publicPath: '',
         filename: '[name].bundle.js',
         chunkFilename: '[name].[id].bundle.js'
     },
     module: {
         loaders: loaders
     },
-    externals: {
-        'react': 'React'
-    },
+    // externals: {
+    //     'react': 'React'
+    // },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx'],
+        alias: {
+            'react': 'react/dist/react.js'
+        }
     },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vender',
+            filename: 'vender.js'
+        })
+    ],
     debug: true,
     devtool: 'eval',
     devServer: {

@@ -18,12 +18,19 @@ module.exports = {
         filename: '[name].bundle.js',
         chunkFilename: '[name].[id].bundle.js'
     },
-	plugins: ['index', 'inline', 'simple', 'standalone'].map(function(name){
+	plugins:
+        ['index', 'inline', 'simple', 'standalone'].map(function(name){
 			return new HtmlWebpackPlugin({
 				filename: name + '.html',
 	      		template: './example/' + name + '.html'
 			});
-		}),
+		}).concat([
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vender',
+                filename: 'vender.js'
+            })
+        ]),
+
     module: {
         loaders: loaders
     },
