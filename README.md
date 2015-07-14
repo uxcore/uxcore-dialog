@@ -41,7 +41,7 @@ React.render(
 ```
 
 ### demo
-http://uxcore.github.io/uxcore-dialog/example/
+http://uxcore.github.io/uxcore-dialog/
 
 ## API
 
