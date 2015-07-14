@@ -34,21 +34,12 @@ module.exports = {
     module: {
         loaders: loaders
     },
-    externals: {
-        'react': 'React'
-    },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx'],
+        alias: {
+            'react': 'react/dist/react.js'
+        }
     },
     debug: true,
-    devtool: 'eval',
-    devServer: {
-        info: true,
-        quiet: false,
-
-        stats: {
-            colors: true,
-            progress: true
-        }
-    }
+    devtool: 'eval'
 };

@@ -19,9 +19,6 @@ module.exports = {
     module: {
         loaders: loaders
     },
-    // externals: {
-    //     'react': 'React'
-    // },
     resolve: {
         extensions: ['', '.js', '.jsx'],
         alias: {
