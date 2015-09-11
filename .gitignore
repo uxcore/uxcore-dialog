@@ -1,15 +1,11 @@
-bower_components/
-*.cfg
-node_modules/
-nohup.out
 *.iml
+*.log
 .idea/
 .ipr
 .iws
 *~
 ~*
 *.diff
-*.log
 *.patch
 *.bak
 .DS_Store
@@ -18,7 +14,9 @@ Thumbs.db
 .*proj
 .svn/
 *.swp
-out/
+*.swo
+*.pyc
+*.pyo
 .build
 node_modules
 _site
@@ -26,3 +24,4 @@ sea-modules
 spm_modules
 .cache
 dist
+assets/**/*.css

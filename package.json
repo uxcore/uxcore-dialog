@@ -1,10 +1,10 @@
 {
   "name": "uxcore-dialog",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "uxcore-dialog ui componment for react",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --colors --port  9090",
+    "dev": "gulp server",
     "build": "webpack --config webpack.build.js",
     "deploy": "git subtree push --prefix build origin gh-pages"
   },
@@ -27,20 +27,22 @@
   "devDependencies": {
     "babel-core": "^5.6.18",
     "babel-loader": "^5.3.1",
-    "css-loader": "^0.13.1",
-    "file-loader": "^0.8.4",
-    "html-webpack-plugin": "^1.6.0",
-    "less": "^2.5.1",
-    "less-loader": "^2.2.0",
-    "node-libs-browser": "^0.5.2",
-    "style-loader": "^0.12.3",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.10.1"
+    "browser-sync": "~2.8.2",
+    "console-polyfill": "~0.2.1",
+    "es5-shim": "~4.1.10",
+    "gulp": "~3.9.0",
+    "gulp-concat": "~2.6.0",
+    "gulp-just-replace": "~1.0.2",
+    "gulp-less": "~3.0.3",
+    "gulp-sourcemaps": "~1.5.2",
+    "webpack": "^1.10.5"
   },
   "dependencies": {
-    "dom-align": "^1.0.8",
-    "object-assign": "^3.0.0",
-    "rc-dialog": "^4.4.1",
-    "react": "^0.13.3"
+    "classnames": "^2.1.2",
+    "object-assign": "^2.0.0",
+    "rc-dialog": "~5.0.3",
+    "rc-util": "~2.0.3",
+    "react": "^0.13.3",
+    "uxcore-kuma": "~1.0.6"
   }
 }

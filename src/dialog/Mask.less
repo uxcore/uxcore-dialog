@@ -1,0 +1,53 @@
+@dialog-prefix-cls: kuma-dialog;
+
+.@{dialog-prefix-cls} {
+
+  &-wrap-hidden > &-mask {
+    display: none;
+  }
+
+  &-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #373737;
+    background-color: rgba(55, 55, 55, 0.6);
+    height: 100%;
+    z-index: 1000;
+    filter: alpha(opacity=50);
+  }
+
+  &-wrap-hidden > &-mask&-fade-enter,
+  &-wrap-hidden > &-mask&-fade-leave {
+    display: block;
+  }
+
+  .fade-effect() {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+  }
+
+  &-fade-enter {
+    opacity: 0;
+    .fade-effect();
+    animation-play-state: paused;
+  }
+
+  &-fade-leave {
+    .fade-effect();
+    animation-play-state: paused;
+  }
+
+  &-fade-enter&-fade-enter-active {
+    animation-name: fadeIn;
+    animation-play-state: running;
+  }
+
+  &-fade-leave&-fade-leave-active {
+    animation-name: fadeOut;
+    animation-play-state: running;
+  }
+}

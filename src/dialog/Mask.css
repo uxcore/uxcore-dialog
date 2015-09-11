@@ -1,0 +1,42 @@
+.kuma-dialog-wrap-hidden > .kuma-dialog-mask {
+  display: none;
+}
+.kuma-dialog-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #373737;
+  background-color: rgba(55, 55, 55, 0.6);
+  height: 100%;
+  z-index: 1000;
+  filter: alpha(opacity=50);
+}
+.kuma-dialog-wrap-hidden > .kuma-dialog-mask.kuma-dialog-fade-enter,
+.kuma-dialog-wrap-hidden > .kuma-dialog-mask.kuma-dialog-fade-leave {
+  display: block;
+}
+.kuma-dialog-fade-enter {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+  animation-play-state: paused;
+}
+.kuma-dialog-fade-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+  animation-play-state: paused;
+}
+.kuma-dialog-fade-enter.kuma-dialog-fade-enter-active {
+  animation-name: fadeIn;
+  animation-play-state: running;
+}
+.kuma-dialog-fade-leave.kuma-dialog-fade-leave-active {
+  animation-name: fadeOut;
+  animation-play-state: running;
+}
+
+/*# sourceMappingURL=../dialog/Mask.css.map */
