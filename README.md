@@ -5,7 +5,7 @@
 - description: uxcore dialog
 - maintainers: vincent.bian
 - version: 0.2.0
-- lastupdate: 2015/9/11
+- lastupdate: 2015/9/14
 - screenshots:
 
 ## TL;DR
@@ -70,4 +70,4 @@ http://uxcore.github.io/uxcore-dialog/
 | onOk       | 点击确定回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭      | function         | 无           |
 | onCancel | 取消回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭       | function         | 无           |
 | width      | 宽度           | String or Number | 416           |
-| iconClassName | 图标样式名 | String | kuma-question-circle |
+| iconClassName | 图标样式名 | String | kuma-icon-caution |

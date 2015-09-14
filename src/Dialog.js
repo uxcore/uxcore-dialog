@@ -68,19 +68,21 @@ export default class Dialog extends React.Component {
         let loadingClass = this.state.confirmLoading ? ' kuma-btn-loading' : '';
         let props = this.props;
         let defaultFooter = [
-          <button key="cancel" type="button" className="kuma-button kuma-button-mwhite" onClick={this.handleCancel.bind(this)}>取 消</button>,
-          <button key="confirm"
-            type="button"
-            className={'kuma-button kuma-button-mblue' + loadingClass}
-            onClick={this.handleOk.bind(this)}>
-            确 定
-          </button>
+            <button key="cancel"
+                type="button"
+                className="kuma-button kuma-button-swhite" onClick={this.handleCancel.bind(this)}>取 消</button>,
+            <button key="confirm"
+                type="button"
+                className={'kuma-button kuma-button-sblue' + loadingClass}
+                onClick={this.handleOk.bind(this)}>
+                确 定
+            </button>
         ];
         let footer = props.footer || defaultFooter;
         let visible = this.state.visible;
         return <RcDialog onClose={this.handleCancel.bind(this)} footer={footer} {...props}
             visible={visible} mousePosition={mousePosition} />;
-        }
+    }
 }
 
 Dialog.defaultProps = {
@@ -88,8 +90,8 @@ Dialog.defaultProps = {
     onOk: noop,
     onCancel: noop,
     width: 520,
-    transitionName: 'zoom',
-    maskAnimation: 'fade'
+    transitionName: false,
+    maskAnimation: false
 };
 
 Dialog.info = function(props) {
