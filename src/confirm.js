@@ -1,3 +1,4 @@
+import Button from 'uxcore-button';
 import React from 'react';
 import Dialog from './Dialog';
 let div;
@@ -68,12 +69,12 @@ export default function (props) {
 
     if (props.okCancel) {
         footer = <div className="kuma-confirm-action">
-            <button type="button" className="kuma-button kuma-button-sblue" onClick={onOk}>确 定</button>
-            <button type="button" className="kuma-button kuma-button-swhite" onClick={onCancel}>取 消</button>
+            <Button size="small" onClick={onOk}>确 定</Button>
+            <Button type="secondary" size="small" onClick={onCancel}>取 消</Button>
         </div>;
     } else {
         footer = <div className="kuma-confirm-action">
-            <button type="button" className="kuma-button kuma-button-sblue" onClick={onOk}>知道了</button>
+            <Button size="small" onClick={onOk}>知道了</Button>
         </div>;
     }
 

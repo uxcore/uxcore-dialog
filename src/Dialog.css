@@ -30,9 +30,10 @@
 .kuma-dialog-title {
   margin: 0;
   font-size: 14px;
-  line-height: 38px;
+  line-height: 34px;
   font-weight: bold;
   color: #333;
+  text-indent: 20px;
 }
 .kuma-dialog-content {
   position: relative;
@@ -43,12 +44,12 @@
 }
 .kuma-dialog-close {
   position: absolute;
-  right: 10px;
+  right: 15px;
   top: 6px;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   outline: none;
-  color: #999;
+  color: #c2c2c2;
 }
 .kuma-dialog-close:hover {
   color: #666;
@@ -67,18 +68,16 @@
 .kuma-dialog-header {
   margin: 0 10px;
   padding: 10px 0 0;
-  height: 48px;
+  height: 44px;
   background: url('https://aliwork.alicdn.com/tps/i3/TB1dfjZGVXXXXb3XpXX8.CvJFXX-3-1.png') repeat-x bottom;
-  text-indent: 1.2em;
 }
 .kuma-dialog-body {
-  padding: 16px;
+  padding: 15px 30px;
   font-size: 12px;
   line-height: 1.5;
 }
 .kuma-dialog-footer {
-  padding: 10px 18px 10px 10px;
-  text-align: right;
+  padding: 0 30px 30px;
 }
 .kuma-dialog-footer button + button {
   margin-left: 8px;

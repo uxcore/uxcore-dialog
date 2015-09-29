@@ -35,13 +35,6 @@ React.render(
 );
 ```
 
-### demo
-http://uxcore.github.io/uxcore-dialog/
-
-## API
-
-### props
-
 ## API
 
 | 参数       | 说明           | 类型             | 默认值       |

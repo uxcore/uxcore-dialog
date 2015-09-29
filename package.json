@@ -43,6 +43,7 @@
     "rc-dialog": "~5.0.3",
     "rc-util": "~2.0.3",
     "react": "^0.13.3",
+    "uxcore-button": "^0.3.0",
     "uxcore-kuma": "~1.0.6"
   }
 }

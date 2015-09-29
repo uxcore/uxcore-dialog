@@ -6,6 +6,7 @@ import React from 'react';
 import RcDialog from 'rc-dialog';
 import { Dom } from 'rc-util';
 import confirm from './confirm';
+import Button from 'uxcore-button';
 
 function noop() {
 }
@@ -68,15 +69,8 @@ export default class Dialog extends React.Component {
         let loadingClass = this.state.confirmLoading ? ' kuma-btn-loading' : '';
         let props = this.props;
         let defaultFooter = [
-            <button key="cancel"
-                type="button"
-                className="kuma-button kuma-button-swhite" onClick={this.handleCancel.bind(this)}>取 消</button>,
-            <button key="confirm"
-                type="button"
-                className={'kuma-button kuma-button-sblue' + loadingClass}
-                onClick={this.handleOk.bind(this)}>
-                确 定
-            </button>
+            <Button key="confirm" onClick={this.handleOk.bind(this)}>确 定</Button>,
+            <Button key="cancel" type="secondary" onClick={this.handleCancel.bind(this)}>取 消</Button>
         ];
         let footer = props.footer || defaultFooter;
         let visible = this.state.visible;
