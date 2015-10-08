@@ -1,14 +1,9 @@
 # uxcore-dialog
 ---
 
-- tags: uxcore, dialog
-- description: uxcore dialog
-- maintainers: vincent.bian
-- version: 0.2.0
-- lastupdate: 2015/9/14
-- screenshots:
-
 ## TL;DR
+
+dialog ui component for react
 
 #### setup develop environment
 
@@ -16,9 +11,8 @@
 $ git clone https://github.com/uxcore/uxcore-dialog
 $ cd uxcore-dialog
 $ npm install
-$ npm run dev
+$ gulp server
 ```
-nav http://localhost:9090/webpack-dev-server/example/ to see the demo
 
 ## Usage
 
@@ -35,11 +29,16 @@ React.render(
 );
 ```
 
+## demo
+
+见 http://uxcore.github.io/uxcore/components/dialog/
+
 ## API
 
 | 参数       | 说明           | 类型             | 默认值       |
 |------------|----------------|------------------|--------------|
 | title      | 标题           | React.Element    | 无           |
+| visible      | 对话框是否可见  | Boolean    | 无           |
 | mousePosition      | 鼠标位置，设置弹窗初始位置           | {x:number,y:number}   | 无           |
 | onOk       | 点击确定回调       | function         | 无           |
 | onCancel   | 点击遮罩层或右上角叉或取消按钮的回调  | function  | 无           |
