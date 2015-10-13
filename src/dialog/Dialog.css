@@ -5,10 +5,6 @@
   top: -9999px;
   z-index: 1000;
 }
-.kuma-dialog-wrap * {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
 .kuma-dialog-wrap-hidden > .kuma-dialog {
   display: none;
 }
@@ -17,13 +13,13 @@
   font-size: 14px;
   line-height: 34px;
   font-weight: bold;
-  color: #333;
+  color: #666666;
   text-indent: 20px;
 }
 .kuma-dialog-content {
   position: relative;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
   box-shadow: 0 1px 8px #ced1d2;
   outline: 0;
 }
@@ -34,10 +30,10 @@
   font-size: 16px;
   cursor: pointer;
   outline: none;
-  color: #c2c2c2;
+  color: #cccccc;
 }
 .kuma-dialog-close:hover {
-  color: #666;
+  color: #666666;
   text-shadow: 0 0 2px #aaa;
 }
 .kuma-dialog-close-x {

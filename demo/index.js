@@ -8,7 +8,7 @@
 
  import {BasicDemo, AsyncCloseDemo, CustomFooter, ConfirmDemo, InfoDemo} from './DialogDemo';
 
- React.render((
+ ReactDOM.render((
     <div>
         <p>基本用法</p>
         <BasicDemo/>

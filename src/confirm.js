@@ -1,9 +1,12 @@
 import Button from 'uxcore-button';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Dialog from './Dialog';
-let div;
 
 export default function (props) {
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
     let d;
     props = props || {};
     props.iconClassName = props.iconClassName || 'kuma-icon-caution';
@@ -18,6 +21,7 @@ export default function (props) {
         d.setState({
             visible: false
         });
+        ReactDOM.unmountComponentAtNode(div);
     }
 
     function onCancel() {
@@ -78,12 +82,7 @@ export default function (props) {
         </div>;
     }
 
-    if (!div) {
-        div = document.createElement('div');
-        document.body.appendChild(div);
-    }
-
-    React.render(<Dialog
+    ReactDOM.render(<Dialog
         prefixCls="kuma-dialog"
         className="kuma-dialog-confirm"
         visible={true}

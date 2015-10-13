@@ -40,8 +40,8 @@ export class BasicDemo extends React.Component {
 		}
 		return (
 			<div>
-				<label><input type="checkbox" name="hasTitle" checked={this.state.hasTitle} onClick={this.toggleTitle.bind(this)} /> 显示title</label><br />
-				<button className="kuma-button kuma-button-mblue" onClick={this.showModal.bind(this)}>显示对话框</button>
+				<label><input type="checkbox" name="hasTitle" defaultChecked={this.state.hasTitle} onClick={this.toggleTitle.bind(this)} /> 显示title</label><br />
+				<button className="kuma-button" onClick={this.showModal.bind(this)}>显示对话框</button>
 				<Dialog title={title}
 					visible={this.state.visible}
 					onOk={this.handleOk.bind(this)}
@@ -86,7 +86,7 @@ export class AsyncCloseDemo extends React.Component {
 	}
 	render() {
 		return (<div>
-			<button className="kuma-button kuma-button-mblue" onClick={this.showModal.bind(this)}>显示对话框</button>
+			<button className="kuma-button" onClick={this.showModal.bind(this)}>显示对话框</button>
 			<Dialog title="对话框标题"
 				visible={this.state.visible}
 				onOk={this.handleOk.bind(this)}
@@ -121,15 +121,15 @@ export class CustomFooter extends React.Component {
 	}
 	render() {
 		return <div>
-			<button className="kuma-button kuma-button-mblue" onClick={this.showModal.bind(this)}>
+			<button className="kuma-button" onClick={this.showModal.bind(this)}>
 			显示对话框
 			</button>
 			<Dialog ref="modal"
 				visible={this.state.visible}
 				title="对话框标题" onOk={this.handleOk} onCancel={this.handleCancel.bind(this)}
 				footer={[
-					<button key="back" className="kuma-button kuma-button-mwhite" onClick={this.handleCancel.bind(this)}>返 回</button>,
-					<button key="submit" className={'kuma-button kuma-button-mblue ' + (this.state.loading ? 'kuma-button-loading': '')} onClick={this.handleOk.bind(this)}>
+					<button key="back" className="kuma-button kuma-button-secondary" onClick={this.handleCancel.bind(this)}>返 回</button>,
+					<button key="submit" className={'kuma-button ' + (this.state.loading ? 'kuma-button-loading': '')} onClick={this.handleOk.bind(this)}>
 					提 交
 					</button>
 				]}>
@@ -156,7 +156,7 @@ function showConfirm(){
 
 export class ConfirmDemo extends React.Component {
 	render(){
-		return (<button className="kuma-button kuma-button-mblue" onClick={showConfirm.bind(this)}>
+		return (<button className="kuma-button" onClick={showConfirm.bind(this)}>
 			  确认对话框
 		  </button>);
 	}
@@ -187,9 +187,9 @@ function error() {
 export class InfoDemo extends React.Component {
 	render(){
 		return (<div>
-		  <button className="kuma-button kuma-button-swhite" onClick={info}>信息提示</button>
-		  <button className="kuma-button kuma-button-swhite" onClick={success}>成功提示</button>
-		  <button className="kuma-button kuma-button-swhite" onClick={error}>失败提示</button>
+		  <button className="kuma-button kuma-button-secondary" onClick={info}>信息提示</button>
+		  <button className="kuma-button kuma-button-secondary" onClick={success}>成功提示</button>
+		  <button className="kuma-button kuma-button-secondary" onClick={error}>失败提示</button>
 		</div>);
 	}
 }

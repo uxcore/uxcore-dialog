@@ -1,11 +1,3 @@
-/*@pager-bg:                             @pagination-bg;
-@pager-border:                         @pagination-border;
-@pager-border-radius:                  15px;
-
-@pager-hover-bg:                       @pagination-hover-bg;
-
-@pager-active-bg:                      @pagination-active-bg;
-@pager-active-color:                   @pagination-active-color;*/
 .kuma-confirm-body {
   padding: 0 10px;
 }
@@ -13,16 +5,16 @@
   font-size: 24px;
 }
 .kuma-confirm-body > .kuma-icon.kuma-icon-caution {
-  color: #ff9419;
+  color: #ff974d;
 }
 .kuma-confirm-body > .kuma-icon.kuma-icon-information {
-  color: #48c5ff;
+  color: #ff9900;
 }
 .kuma-confirm-body > .kuma-icon.kuma-icon-success {
-  color: #88d05c;
+  color: #95ed5e;
 }
 .kuma-confirm-body > .kuma-icon.kuma-icon-error {
-  color: #e96553;
+  color: #ed6f5e;
 }
 .kuma-confirm-title {
   margin-left: 10px;

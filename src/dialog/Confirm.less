@@ -1,5 +1,5 @@
+@import "../../node_modules/uxcore-kuma/src/variables";
 @confirm-prefix-cls: kuma-confirm;
-@import "../../node_modules/uxcore-kuma/src/less/variables";
 
 .@{confirm-prefix-cls} {
 	&-body {
@@ -7,16 +7,16 @@
 		> .kuma-icon {
 			font-size: 24px;
 			&.kuma-icon-caution {
-				color: @tip-warning;
+				color: @brand-warning;
 			}
 			&.kuma-icon-information {
-				color: @tip-info;
+				color: @brand-primary;
 			}
 			&.kuma-icon-success {
-				color: @tip-success;
+				color: @brand-success;
 			}
 			&.kuma-icon-error {
-				color: @tip-danger;
+				color: @brand-danger;
 			}
 		}
 	}
