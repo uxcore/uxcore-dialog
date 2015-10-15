@@ -80,7 +80,7 @@ export default class Dialog extends React.Component {
 }
 
 Dialog.defaultProps = {
-    prefixCls: 'kuma-dialog',
+    prefixCls: 'kuma-dlg',
     onOk: noop,
     onCancel: noop,
     width: 520,

@@ -5,17 +5,17 @@
  * Copyright 2014-2015, Uxcore Team, Alinw.
  * All rights reserved.
  */
-.kuma-dialog {
+.kuma-dlg {
   outline: none;
   position: absolute;
   left: -9999px;
   top: -9999px;
   z-index: 1000;
 }
-.kuma-dialog-wrap-hidden > .kuma-dialog {
+.kuma-dlg-wrap-hidden > .kuma-dlg {
   display: none;
 }
-.kuma-dialog-title {
+.kuma-dlg-title {
   margin: 0;
   font-size: 14px;
   line-height: 34px;
@@ -23,14 +23,14 @@
   color: #666666;
   text-indent: 20px;
 }
-.kuma-dialog-content {
+.kuma-dlg-content {
   position: relative;
   background-color: #ffffff;
   border: 1px solid #cccccc;
   box-shadow: 0 1px 8px #ced1d2;
   outline: 0;
 }
-.kuma-dialog-close {
+.kuma-dlg-close {
   position: absolute;
   right: 15px;
   top: 6px;
@@ -39,42 +39,42 @@
   outline: none;
   color: #cccccc;
 }
-.kuma-dialog-close:hover {
+.kuma-dlg-close:hover {
   color: #666666;
   text-shadow: 0 0 2px #aaa;
 }
-.kuma-dialog-close-x {
+.kuma-dlg-close-x {
   font-family: kuma!important;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: .2px;
   -moz-osx-font-smoothing: grayscale;
 }
-.kuma-dialog-close-x:after {
+.kuma-dlg-close-x:after {
   content: '';
 }
-.kuma-dialog-header {
+.kuma-dlg-header {
   margin: 0 10px;
   padding: 10px 0 0;
   height: 44px;
   background: url('https://aliwork.alicdn.com/tps/i3/TB1dfjZGVXXXXb3XpXX8.CvJFXX-3-1.png') repeat-x bottom;
 }
-.kuma-dialog-body {
+.kuma-dlg-body {
   padding: 15px 30px;
   font-size: 12px;
   line-height: 1.5;
 }
-.kuma-dialog-footer {
+.kuma-dlg-footer {
   padding: 0 30px 30px;
 }
-.kuma-dialog-footer button + button {
+.kuma-dlg-footer button + button {
   margin-left: 8px;
   margin-bottom: 0;
 }
-.kuma-dialog-wrap-hidden > .kuma-dialog-mask {
+.kuma-dlg-wrap-hidden > .kuma-dlg-mask {
   display: none;
 }
-.kuma-dialog-mask {
+.kuma-dlg-mask {
   position: fixed;
   top: 0;
   right: 0;
@@ -86,8 +86,8 @@
   z-index: 1000;
   filter: alpha(opacity=80);
 }
-.kuma-dialog-wrap-hidden > .kuma-dialog-mask.kuma-dialog-fade-enter,
-.kuma-dialog-wrap-hidden > .kuma-dialog-mask.kuma-dialog-fade-leave {
+.kuma-dlg-wrap-hidden > .kuma-dlg-mask.kuma-dlg-fade-enter,
+.kuma-dlg-wrap-hidden > .kuma-dlg-mask.kuma-dlg-fade-leave {
   display: block;
 }
 .kuma-confirm-body {

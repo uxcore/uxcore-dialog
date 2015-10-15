@@ -1,7 +1,7 @@
-.kuma-dialog-wrap-hidden > .kuma-dialog-mask {
+.kuma-dlg-wrap-hidden > .kuma-dlg-mask {
   display: none;
 }
-.kuma-dialog-mask {
+.kuma-dlg-mask {
   position: fixed;
   top: 0;
   right: 0;
@@ -13,8 +13,8 @@
   z-index: 1000;
   filter: alpha(opacity=80);
 }
-.kuma-dialog-wrap-hidden > .kuma-dialog-mask.kuma-dialog-fade-enter,
-.kuma-dialog-wrap-hidden > .kuma-dialog-mask.kuma-dialog-fade-leave {
+.kuma-dlg-wrap-hidden > .kuma-dlg-mask.kuma-dlg-fade-enter,
+.kuma-dlg-wrap-hidden > .kuma-dlg-mask.kuma-dlg-fade-leave {
   display: block;
 }
 
