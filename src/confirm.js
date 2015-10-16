@@ -83,8 +83,8 @@ export default function (props) {
     }
 
     ReactDOM.render(<Dialog
-        prefixCls="kuma-dialog"
-        className="kuma-dialog-confirm"
+        prefixCls="kuma-dlg"
+        className="kuma-dlg-confirm"
         visible={true}
         closable={false}
         title=""
