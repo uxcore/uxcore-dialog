@@ -42,7 +42,7 @@
   "dependencies": {
     "classnames": "^2.1.2",
     "object-assign": "^2.0.0",
-    "rc-dialog": "~5.0.3",
+    "rc-dialog": "~5.2.1",
     "rc-util": "~2.0.3",
     "uxcore-button": "^0.3.0",
     "uxcore-kuma": "^1.1.0"

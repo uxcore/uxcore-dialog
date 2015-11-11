@@ -22,6 +22,7 @@ export default function (props) {
             visible: false
         });
         ReactDOM.unmountComponentAtNode(div);
+        document.body.removeChild(div);
     }
 
     function onCancel() {
@@ -88,7 +89,6 @@ export default function (props) {
         visible={true}
         closable={false}
         title=""
-        transitionName="zoom"
         footer=""
         maskTransitionName="fade" width={width}>
         <div>{body} {footer}</div>

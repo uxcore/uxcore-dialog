@@ -2,6 +2,9 @@
 
 ---
 
+## 0.2.5
+`UPGRADE` upgrade to rc-dialog@5.2.1
+
 ## 0.2.4
 `FIXED` fix confirm style bug
 
