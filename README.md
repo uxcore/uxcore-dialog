@@ -63,4 +63,5 @@ React.render(
 | onOk       | 点击确定回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭      | function         | 无           |
 | onCancel | 取消回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭       | function         | 无           |
 | width      | 宽度           | String or Number | 416           |
+| buttonSize  |  按钮的尺寸，'small', 'medium', 'large' 三种可选 | String | 'medium'|
 | iconClassName | 图标样式名 | String | kuma-icon-caution |

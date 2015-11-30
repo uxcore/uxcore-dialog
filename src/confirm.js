@@ -74,12 +74,12 @@ export default function (props) {
 
     if (props.okCancel) {
         footer = <div className="kuma-confirm-action">
-            <Button size="small" onClick={onOk}>确 定</Button>
-            <Button type="secondary" size="small" onClick={onCancel}>取 消</Button>
+            <Button size={props.buttonSize || "medium"} onClick={onOk}>确 定</Button>
+            <Button type="secondary" size={props.buttonSize || "medium"} onClick={onCancel}>取 消</Button>
         </div>;
     } else {
         footer = <div className="kuma-confirm-action">
-            <Button size="small" onClick={onOk}>知道了</Button>
+            <Button size={props.buttonSize || "medium"} onClick={onOk}>知道了</Button>
         </div>;
     }
 
