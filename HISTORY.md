@@ -4,6 +4,7 @@
 
 ## 0.2.6
 `CHANGED` Change buttonSize in confirm mode.
+`NEW` add confirm options buttonSize.
 
 ## 0.2.5
 `UPGRADE` upgrade to rc-dialog@5.2.1
