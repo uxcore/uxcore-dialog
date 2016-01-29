@@ -43,6 +43,7 @@ export class BasicDemo extends React.Component {
 				<label><input type="checkbox" name="hasTitle" defaultChecked={this.state.hasTitle} onClick={this.toggleTitle.bind(this)} /> 显示title</label><br />
 				<button className="kuma-button" onClick={this.showModal.bind(this)}>显示对话框</button>
 				<Dialog title={title}
+					lang='en'
 					visible={this.state.visible}
 					onOk={this.handleOk.bind(this)}
 					onCancel={this.handleCancel.bind(this)}>
@@ -166,6 +167,7 @@ function info() {
   Dialog.info({
     title: '这是一条通知信息',
     content: '一些附加信息一些附加信息一些附加信息',
+    lang: 'en',
     onOk: function() {}
   });
 }

@@ -6,6 +6,7 @@ import React from 'react';
 import RcDialog from 'rc-dialog';
 import confirm from './confirm';
 import Button from 'uxcore-button';
+import i18n from './i18n';
 
 function noop() {
 }
@@ -29,19 +30,20 @@ export default class Dialog extends React.Component {
 
     render() {
         let props = this.props;
+        let lang = i18n[props.lang];
         let defaultFooter = [
             <Button key="confirm"
                 type="primary"
                 size="medium"
                 loading={props.confirmLoading}
                 onClick={this.handleOk.bind(this)}>
-                确定
+                {lang['ok']}
             </Button>,
             <Button key="cancel"
                 type="secondary"
                 size="medium"
                 onClick={this.handleCancel.bind(this)}>
-                取消
+                {lang['cancel']}
             </Button>
         ];
         let footer = props.footer || defaultFooter;
@@ -53,6 +55,7 @@ export default class Dialog extends React.Component {
 Dialog.defaultProps = {
     prefixCls: 'kuma-dlg',
     onOk: noop,
+    lang: 'zh-cn',
     onCancel: noop,
     width: 520,
     transitionName: '',

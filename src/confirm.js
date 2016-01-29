@@ -1,7 +1,6 @@
-import Button from 'uxcore-button';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Dialog from './Dialog';
+import Button from 'uxcore-button'
+import Dialog from './Dialog'
+import i18n from './i18n'
 
 export default function (props) {
     let div = document.createElement('div');
@@ -11,6 +10,9 @@ export default function (props) {
     props = props || {};
     props.iconClassName = props.iconClassName || 'kuma-icon-caution';
     let width = props.width || 416;
+
+    props.lang = props.lang || 'zh-cn';
+    let lang = i18n[props.lang];
 
     // 默认为 true，保持向下兼容
     if (!('okCancel' in props)) {
@@ -74,12 +76,12 @@ export default function (props) {
 
     if (props.okCancel) {
         footer = <div className="kuma-confirm-action">
-            <Button size={props.buttonSize || "medium"} onClick={onOk}>确 定</Button>
-            <Button type="secondary" size={props.buttonSize || "medium"} onClick={onCancel}>取 消</Button>
+            <Button size={props.buttonSize || "medium"} onClick={onOk}>{lang['ok']}</Button>
+            <Button type="secondary" size={props.buttonSize || "medium"} onClick={onCancel}>{lang['cancel']}</Button>
         </div>;
     } else {
         footer = <div className="kuma-confirm-action">
-            <Button size={props.buttonSize || "medium"} onClick={onOk}>知道了</Button>
+            <Button size={props.buttonSize || "medium"} onClick={onOk}>{lang['isee']}</Button>
         </div>;
     }
 
