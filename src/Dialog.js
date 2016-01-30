@@ -30,20 +30,20 @@ export default class Dialog extends React.Component {
 
     render() {
         let props = this.props;
-        let lang = i18n[props.lang];
+        let locale = i18n[props.locale];
         let defaultFooter = [
             <Button key="confirm"
                 type="primary"
                 size="medium"
                 loading={props.confirmLoading}
                 onClick={this.handleOk.bind(this)}>
-                {lang['ok']}
+                {locale['ok']}
             </Button>,
             <Button key="cancel"
                 type="secondary"
                 size="medium"
                 onClick={this.handleCancel.bind(this)}>
-                {lang['cancel']}
+                {locale['cancel']}
             </Button>
         ];
         let footer = props.footer || defaultFooter;
@@ -55,7 +55,7 @@ export default class Dialog extends React.Component {
 Dialog.defaultProps = {
     prefixCls: 'kuma-dlg',
     onOk: noop,
-    lang: 'zh-cn',
+    locale: 'zh-cn',
     onCancel: noop,
     width: 520,
     transitionName: '',

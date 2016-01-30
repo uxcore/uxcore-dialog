@@ -11,8 +11,8 @@ export default function (props) {
     props.iconClassName = props.iconClassName || 'kuma-icon-caution';
     let width = props.width || 416;
 
-    props.lang = props.lang || 'zh-cn';
-    let lang = i18n[props.lang];
+    props.locale = props.locale || 'zh-cn';
+    let locale = i18n[props.locale];
 
     // 默认为 true，保持向下兼容
     if (!('okCancel' in props)) {
@@ -76,12 +76,12 @@ export default function (props) {
 
     if (props.okCancel) {
         footer = <div className="kuma-confirm-action">
-            <Button size={props.buttonSize || "medium"} onClick={onOk}>{lang['ok']}</Button>
-            <Button type="secondary" size={props.buttonSize || "medium"} onClick={onCancel}>{lang['cancel']}</Button>
+            <Button size={props.buttonSize || "medium"} onClick={onOk}>{locale['ok']}</Button>
+            <Button type="secondary" size={props.buttonSize || "medium"} onClick={onCancel}>{locale['cancel']}</Button>
         </div>;
     } else {
         footer = <div className="kuma-confirm-action">
-            <Button size={props.buttonSize || "medium"} onClick={onOk}>{lang['isee']}</Button>
+            <Button size={props.buttonSize || "medium"} onClick={onOk}>{locale['isee']}</Button>
         </div>;
     }
 
