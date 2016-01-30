@@ -2,6 +2,9 @@
 
 ---
 
+## 0.2.7
+`NEW` add locale props
+
 ## 0.2.6
 `CHANGED` Change buttonSize in confirm mode.
 `NEW` add confirm options buttonSize.

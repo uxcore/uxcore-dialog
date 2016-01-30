@@ -4,7 +4,7 @@ module.exports = {
         'cancel': '取消',
         'isee': '知道了'
     },
-    'en': {
+    'en-us': {
         'ok': 'ok',
         'cancel': 'cancel',
         'isee': 'ok'
