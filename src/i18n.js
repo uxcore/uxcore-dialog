@@ -8,5 +8,5 @@ module.exports = {
         'ok': 'ok',
         'cancel': 'cancel',
         'isee': 'ok'
-    },
+    }
 }

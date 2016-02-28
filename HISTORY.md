@@ -2,6 +2,9 @@
 
 ---
 
+## 0.2.8
+`CHANGED` update scaffold
+
 ## 0.2.7
 `NEW` add locale props
 

@@ -2,11 +2,12 @@
  * @author: vincent
  * @date: 15/5/19
  */
-import React from 'react';
 import RcDialog from 'rc-dialog';
 import confirm from './confirm';
 import Button from 'uxcore-button';
 import i18n from './i18n';
+import React from 'react'; 
+import ReactDOM from 'react-dom';
 
 function noop() {
 }

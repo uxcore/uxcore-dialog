@@ -1,6 +1,8 @@
-import Button from 'uxcore-button'
-import Dialog from './Dialog'
-import i18n from './i18n'
+import Button from 'uxcore-button';
+import Dialog from './Dialog';
+import i18n from './i18n';
+import React from 'react'; 
+import ReactDOM from 'react-dom';
 
 export default function (props) {
     let div = document.createElement('div');
