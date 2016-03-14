@@ -7,6 +7,11 @@
  */
 * {
     box-sizing: border-box;
+    &:after, &:before {
+        box-sizing: border-box;
+    }
 }
-@import "../node_modules/uxcore-kuma/src/variables";
-@import "../src/Dialog.less";
+@import '../style/kuma-base/theme/blue.less';
+@import '../style/kuma-base/core.less';
+// @import "../node_modules/uxcore-kuma/src/variables";
+@import '../src/Dialog.less';

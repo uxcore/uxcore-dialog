@@ -41,7 +41,7 @@ export class BasicDemo extends React.Component {
 		return (
 			<div>
 				<label><input type="checkbox" name="hasTitle" defaultChecked={this.state.hasTitle} onClick={this.toggleTitle.bind(this)} /> 显示title</label><br />
-				<button className="kuma-button" onClick={this.showModal.bind(this)}>显示对话框</button>
+				<button className="kuma-button kuma-button-primary" onClick={this.showModal.bind(this)}>显示对话框</button>
 				<Dialog title={title}
 					locale='en-us'
 					visible={this.state.visible}
@@ -87,7 +87,7 @@ export class AsyncCloseDemo extends React.Component {
 	}
 	render() {
 		return (<div>
-			<button className="kuma-button" onClick={this.showModal.bind(this)}>显示对话框</button>
+			<button className="kuma-button kuma-button-primary" onClick={this.showModal.bind(this)}>显示对话框</button>
 			<Dialog title="对话框标题"
 				visible={this.state.visible}
 				onOk={this.handleOk.bind(this)}
@@ -122,7 +122,7 @@ export class CustomFooter extends React.Component {
 	}
 	render() {
 		return <div>
-			<button className="kuma-button" onClick={this.showModal.bind(this)}>
+			<button className="kuma-button kuma-button-primary" onClick={this.showModal.bind(this)}>
 			显示对话框
 			</button>
 			<Dialog ref="modal"
@@ -157,7 +157,7 @@ function showConfirm(){
 
 export class ConfirmDemo extends React.Component {
 	render(){
-		return (<button className="kuma-button" onClick={showConfirm.bind(this)}>
+		return (<button className="kuma-button kuma-button-primary" onClick={showConfirm.bind(this)}>
 			  确认对话框
 		  </button>);
 	}
