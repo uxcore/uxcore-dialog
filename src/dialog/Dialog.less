@@ -1,6 +1,6 @@
-@dialog-prefix-cls: kuma-dlg;
+@__dialog-prefix-cls: kuma-dlg;
 
-.@{dialog-prefix-cls} {
+.@{__dialog-prefix-cls} {
     outline: none;
     position: absolute;
     left: -9999px;
@@ -21,9 +21,8 @@
 
     &-content {
         position: relative;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        box-shadow: 0 1px 8px #ced1d2;
+        background-color: @basic-100;
+        box-shadow: 0 0 4px 0 fadeout(#000, 80%);
         outline: 0;
         border-radius: 3px;
         overflow: hidden;
@@ -31,48 +30,57 @@
 
     &-close {
         position: absolute;
-        right: 20px;
+        right: 16px;
         top: 6px;
         font-size: 16px;
         cursor: pointer;
         outline: none;
         color: @basic-100;
 
-    &:hover {
-        color: #333;
-        text-shadow: 0 0 2px #aaa;
-    }
+        &:hover {
+            color: @basic-100;
+            text-decoration: none;
+        }
 
-    &-x {
-        font-family: kuma!important;
-        font-style: normal;
-        -webkit-font-smoothing: antialiased;
-        -webkit-text-stroke-width: .2px;
-        -moz-osx-font-smoothing: grayscale;
-        &:after {
-            content: '';
+        &-x {
+            font-family: kuma!important;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: .2px;
+            -moz-osx-font-smoothing: grayscale;
+            &:after {
+                content: '';
+            }
         }
     }
-}
-
-  &-header {
-    height: 40px;
-    background-color: @brand-primary;
-  }
-
-  &-body {
-    padding: 15px 20px;
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
-  &-footer {
-    padding: 12px 0;
-    background-color: @basic-300;
-    text-align: center;
-    button + button {
-        margin-left: 8px;
-        margin-bottom: 0;
+    
+    
+    &.@{__dialog-prefix-cls}-noheader {
+        .@{__dialog-prefix-cls}-close {
+            right: 10px;
+            top: 6px;
+            color: @gray-lighter;
+        }
     }
-  }
+
+    &-header {
+        height: 40px;
+        background-color: @brand-primary;
+    }
+
+    &-body {
+        padding: 15px 20px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    &-footer {
+        padding: 12px 0;
+        background-color: @basic-300;
+        text-align: center;
+        button + button {
+            margin-left: 8px;
+            margin-bottom: 0;
+        }
+    }
 }

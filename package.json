@@ -57,7 +57,6 @@
   "object-assign": "^4.0.0",
   "rc-dialog": "~5.4.0",
   "rc-util": "~2.0.3",
-  "uxcore-button": "^0.3.0",
-  "uxcore-kuma": "^1.1.0"
+  "uxcore-button": "~0.4.0"
  }
 }

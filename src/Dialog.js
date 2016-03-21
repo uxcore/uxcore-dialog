@@ -7,7 +7,6 @@ import confirm from './confirm';
 import Button from 'uxcore-button';
 import i18n from './i18n';
 import React from 'react'; 
-import ReactDOM from 'react-dom';
 
 function noop() {
 }
@@ -48,13 +47,25 @@ export default class Dialog extends React.Component {
             </Button>
         ];
         let footer = props.footer || defaultFooter;
-        return <RcDialog onClose={this.handleCancel.bind(this)} footer={footer} {...props}
-          visible={props.visible} />;
+        let className;
+        if (!props.title) {
+            className = `${props.className} ${props.prefixCls}-noheader`;
+        } else {
+            className = props.className;
+        }
+        console.log(props.title, className)
+        return <RcDialog
+            onClose={this.handleCancel.bind(this)}
+            footer={footer}
+            {...props}
+            className={className}
+            visible={props.visible} />;
     }
 }
 
 Dialog.defaultProps = {
     prefixCls: 'kuma-dlg',
+    className: '',
     onOk: noop,
     locale: 'zh-cn',
     onCancel: noop,
@@ -62,7 +73,10 @@ Dialog.defaultProps = {
     transitionName: '',
     maskAnimation: false,
     confirmLoading: false,
-    visible: false
+    visible: false,
+    closable: true,
+    maskClosable: false,
+    title: ''
 };
 
 Dialog.info = function(props) {

@@ -1,38 +1,47 @@
-@confirm-prefix-cls: kuma-confirm;
-
-.@{confirm-prefix-cls} {
-	&-body {
-		padding: 0 10px;
-		> .kuma-icon {
-			font-size: 24px;
-			&.kuma-icon-caution {
-				color: @brand-warning;
-			}
-			&.kuma-icon-information {
-				color: @brand-primary;
-			}
-			&.kuma-icon-success {
-				color: @brand-success;
-			}
-			&.kuma-icon-error {
-				color: @brand-danger;
-			}
-		}
-	}
-	&-title {
-		margin-left: 10px;
-		font-size: 14px;
-	}
-	&-content {
-		margin-left: 34px;
-		margin-bottom: 15px;
-	}
-	&-action {
-		margin-left: 44px;
-		button + button {
-	        margin-left: 8px;
-	        margin-bottom: 0;
-	    }
-	}
-
+@__confirm-prefix-cls: kuma-confirm;
+.@{__dialog-prefix-cls}-confirm {
+    .@{__dialog-prefix-cls}-body {
+        padding: 0;
+        .@{__confirm-prefix-cls}-body {
+            padding: 20px;
+            > .kuma-icon {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 24px;
+                &.kuma-icon-caution {
+                    color: @brand-warning;
+                }
+                &.kuma-icon-information {
+                    color: @brand-info;
+                }
+                &.kuma-icon-success {
+                    color: @brand-success;
+                }
+                &.kuma-icon-error {
+                    color: @brand-danger;
+                }
+            }
+        }
+        .@{__confirm-prefix-cls}-title {
+            margin-left: 12px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px;
+            color: @primary-text-color;
+        }
+        .@{__confirm-prefix-cls}-content {
+            margin-left: 36px;
+            font-size: 12px;
+            color: @seconary-text-color;
+        }
+        .@{__confirm-prefix-cls}-action {
+            padding: 12px 0;
+            background-color: @basic-300;
+            text-align: center;
+            button + button {
+                margin-left: 8px;
+                margin-bottom: 0;
+            }
+        }
+    }
 }

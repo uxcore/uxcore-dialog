@@ -2,6 +2,9 @@
 
 ---
 
+## 0.3.0
+`CHANGED` apply new style
+
 ## 0.2.9
 `CHANGED` update scaffold
 

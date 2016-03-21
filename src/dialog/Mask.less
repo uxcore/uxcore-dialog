@@ -1,6 +1,6 @@
-@dialog-prefix-cls: kuma-dlg;
+@__dialog-prefix-cls: kuma-dlg;
 
-.@{dialog-prefix-cls} {
+.@{__dialog-prefix-cls} {
 
   &-wrap-hidden > &-mask {
     display: none;
@@ -12,11 +12,11 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.3);
     height: 100%;
     z-index: 1000;
-    filter: alpha(opacity=80);
+    filter: alpha(opacity=30);
     &-hidden {
         display: none;
     }

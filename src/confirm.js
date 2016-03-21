@@ -11,7 +11,7 @@ export default function (props) {
     let d;
     props = props || {};
     props.iconClassName = props.iconClassName || 'kuma-icon-caution';
-    let width = props.width || 416;
+    let width = props.width || 300;
 
     props.locale = props.locale || 'zh-cn';
     let locale = i18n[props.locale];
@@ -78,20 +78,21 @@ export default function (props) {
 
     if (props.okCancel) {
         footer = <div className="kuma-confirm-action">
-            <Button size={props.buttonSize || "medium"} onClick={onOk}>{locale['ok']}</Button>
-            <Button type="secondary" size={props.buttonSize || "medium"} onClick={onCancel}>{locale['cancel']}</Button>
+            <Button size={props.buttonSize || "small"} onClick={onOk}>{locale['ok']}</Button>
+            <Button type="secondary" size={props.buttonSize || "small"} onClick={onCancel}>{locale['cancel']}</Button>
         </div>;
     } else {
         footer = <div className="kuma-confirm-action">
-            <Button size={props.buttonSize || "medium"} onClick={onOk}>{locale['isee']}</Button>
+            <Button size={props.buttonSize || "small"} onClick={onOk}>{locale['isee']}</Button>
         </div>;
     }
 
     ReactDOM.render(<Dialog
         prefixCls="kuma-dlg"
         className="kuma-dlg-confirm"
+        onCancel={onCancel}
         visible={true}
-        closable={false}
+        closable={true}
         title=""
         footer=""
         maskTransitionName="fade" width={width}>

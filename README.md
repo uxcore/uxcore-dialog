@@ -45,6 +45,7 @@ React.render(
 | width      | 宽度           | String or Number | 520           |
 | footer     | 底部内容       | React.Element    | 确定取消按钮 |
 | closable | whether show close button and click mask to close | Boolean | true |
+| maskClosable | whether click mask to close, this prop will be ignored if set closable prop to false | Boolean | true |
 | locale     | 国际化(包括 `zh-cn` 和 `en-us`)    | String     |  `zh-cn`
 
 ### Dialog.xxx()
