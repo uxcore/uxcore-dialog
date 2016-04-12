@@ -2,6 +2,9 @@
 
 ---
 
+## 0.3.2
+`CHANGED` add default transitionName in confirm.js
+
 ## 0.3.0
 `CHANGED` apply new style
 

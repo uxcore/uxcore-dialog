@@ -95,7 +95,8 @@ export default function (props) {
         closable={true}
         title=""
         footer=""
-        maskTransitionName="fade" width={width}>
+        transitionName={props.transitionName || "threeFallV"}
+        maskTransitionName={props.transitionName || "fade"} width={width}>
         <div>{body} {footer}</div>
     </Dialog>, div, function () {
         d = this;
