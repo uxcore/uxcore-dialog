@@ -17,7 +17,7 @@ export default class Dialog extends React.Component {
         super(props);
         this.state = {
             confirmLoading: false,
-            visible: this.props.visible
+            visible: props.visible
         };
     }
 
