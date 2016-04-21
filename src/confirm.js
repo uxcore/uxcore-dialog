@@ -96,7 +96,7 @@ export default function (props) {
         title=""
         footer=""
         transitionName={props.transitionName || "threeFallV"}
-        maskTransitionName={props.transitionName || "fade"} width={width}>
+        maskTransitionName={props.transitionName} width={width}>
         <div>{body} {footer}</div>
     </Dialog>, div, function () {
         d = this;

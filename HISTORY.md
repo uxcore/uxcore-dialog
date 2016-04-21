@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.3
+`CHANGED` remove `console.log`
+`CHANGED` remove mask animate
+
 ## 0.3.2
 `CHANGED` add default transitionName in confirm.js
 

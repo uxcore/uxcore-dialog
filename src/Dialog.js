@@ -53,7 +53,6 @@ export default class Dialog extends React.Component {
         } else {
             className = props.className;
         }
-        console.log(props.title, className)
         return <RcDialog
             onClose={this.handleCancel.bind(this)}
             footer={footer}
