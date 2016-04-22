@@ -2,6 +2,9 @@
 
 ---
 
+## 0.3.4
+`NEW` add animation
+
 ## 0.3.3
 `CHANGED` remove `console.log`
 `CHANGED` remove mask animate

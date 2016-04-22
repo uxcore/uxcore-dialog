@@ -130,7 +130,7 @@ export class CustomFooter extends React.Component {
 				title="对话框标题" onOk={this.handleOk} onCancel={this.handleCancel.bind(this)}
 				footer={[
 					<button key="back" className="kuma-button kuma-button-secondary" onClick={this.handleCancel.bind(this)}>返 回</button>,
-					<button key="submit" className={'kuma-button ' + (this.state.loading ? 'kuma-button-loading': '')} onClick={this.handleOk.bind(this)}>
+					<button key="submit" className={'kuma-button kuma-button-primary'} onClick={this.handleOk.bind(this)}>
 					提 交
 					</button>
 				]}>

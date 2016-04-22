@@ -84,3 +84,56 @@
         }
     }
 }
+
+// 3D fall - Vertical
+
+@keyframes threeFallVertical{
+    0% {
+        opacity: 0;
+        transform: perspective(1300px) rotateX(-90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(1300px) rotateX(0deg);
+    }
+}
+
+.threeFallV-enter,
+.threeFallV-appear {
+    opacity: 0;
+    transform: perspective(1300px) rotateX(-90deg);
+    animation-timing-function: ease;
+    animation-duration: .3s; 
+}
+
+.threeFallV-enter-active,
+.threeFallV-appear-active {
+    visibility: visible;
+    animation-name: threeFallVertical;
+}
+
+// maskFadeIn
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-enter,
+.fade-appear {
+    opacity: 0;
+    animation-timing-function: ease;
+    animation-duration: .3s; 
+}
+
+.fade-enter-active,
+.fade-appear-active {
+    visibility: visible;
+    animation-name: fadeIn;
+}
+
+
