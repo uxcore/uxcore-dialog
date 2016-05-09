@@ -2,6 +2,9 @@
 
 ---
 
+## 0.3.5
+`FIXED` #12
+
 ## 0.3.4
 `NEW` add animation
 
