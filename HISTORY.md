@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.6
+`FIXED` #6 #3 
+`CHANGED` add props `timer` in confirm 
+
 ## 0.3.5
 `FIXED` #12
 

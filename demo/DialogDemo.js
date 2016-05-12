@@ -163,35 +163,52 @@ export class ConfirmDemo extends React.Component {
 	}
 }
 
-function info() {
+function info(autoClose) {
   Dialog.info({
     title: '这是一条通知信息',
     content: '一些附加信息一些附加信息一些附加信息',
     locale: 'en-us',
-    onOk: function() {}
+    onOk: function() {},
+		timer: autoClose ? 2000: false
   });
 }
 
-function success() {
+function success(autoClose) {
   Dialog.success({
     title: '这是一条通知信息',
-    content: '一些附加信息一些附加信息一些附加信息'
+    content: '一些附加信息一些附加信息一些附加信息',
+		timer: autoClose ? 2000: false
   });
 }
 
-function error() {
+function error(autoClose) {
   Dialog.error({
     title: '这是一条通知信息',
-    content: '一些附加信息一些附加信息一些附加信息'
+    content: '一些附加信息一些附加信息一些附加信息',
+		timer: autoClose ? 2000: false
   });
 }
 
 export class InfoDemo extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			autoClose: false
+		};
+	}
+	onChangeAutoClose(){
+		this.setState({
+			autoClose: !this.state.autoClose
+		});
+	}
 	render(){
 		return (<div>
-		  <button className="kuma-button kuma-button-secondary" onClick={info}>信息提示</button>
-		  <button className="kuma-button kuma-button-secondary" onClick={success}>成功提示</button>
-		  <button className="kuma-button kuma-button-secondary" onClick={error}>失败提示</button>
+			<div>
+				<label><input type="checkbox" defaultChecked={this.state.autoClose} onChange={this.onChangeAutoClose.bind(this)} />2s自动关闭</label>
+			</div>
+		  <button className="kuma-button kuma-button-secondary" onClick={info.bind(this, this.state.autoClose)}>信息提示</button>
+		  <button className="kuma-button kuma-button-secondary" onClick={success.bind(this, this.state.autoClose)}>成功提示</button>
+		  <button className="kuma-button kuma-button-secondary" onClick={error.bind(this, this.state.autoClose)}>失败提示</button>
 		</div>);
 	}
 }

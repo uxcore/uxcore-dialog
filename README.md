@@ -67,3 +67,4 @@ React.render(
 | width      | 宽度           | String or Number | 416           |
 | buttonSize  |  按钮的尺寸，'small', 'medium', 'large' 三种可选 | String | 'medium'|
 | iconClassName | 图标样式名 | String | kuma-icon-caution |
+| timer | 弹框自动关闭, 2000表示2s以后关闭 | Number, false or null | false |

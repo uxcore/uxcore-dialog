@@ -20,6 +20,12 @@ export default function (props) {
     if (!('okCancel' in props)) {
         props.okCancel = true;
     }
+    
+    if (props.timer) {
+        setTimeout(() => {
+            close();
+        }, props.timer);
+    }
 
     function close() {
         d.setState({
