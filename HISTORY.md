@@ -2,6 +2,9 @@
 
 ---
 
+## 0.3.7
+`FIXED` confirm content's wrap bug
+
 ## 0.3.6
 `FIXED` #6 #3 
 `CHANGED` add props `timer` in confirm 
