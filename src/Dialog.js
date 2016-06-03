@@ -29,9 +29,18 @@ export default class Dialog extends React.Component {
     }
 
     render() {
-        let props = this.props;
-        let locale = i18n[props.locale];
-        let defaultFooter = [
+        const props = this.props;
+        let {transitionName, ...otherProps} = props;
+        const locale = i18n[props.locale];
+
+        if (typeof document == "object") {
+            if (/Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor)) {
+                // safari animation bug when using threeFallV
+                transitionName = 'slideDown';
+            }
+        }
+        console.log(transitionName);
+        const defaultFooter = [
             <Button key="confirm"
                 type="primary"
                 size="medium"
@@ -46,7 +55,7 @@ export default class Dialog extends React.Component {
                 {locale['cancel']}
             </Button>
         ];
-        let footer = props.footer || defaultFooter;
+        const footer = props.footer || defaultFooter;
         let className;
         if (!props.title) {
             className = `${props.className} ${props.prefixCls}-noheader`;
@@ -57,6 +66,7 @@ export default class Dialog extends React.Component {
             onClose={this.handleCancel.bind(this)}
             footer={footer}
             {...props}
+            transitionName={transitionName}
             className={className}
             visible={props.visible} />;
     }

@@ -93,6 +93,14 @@ export default function (props) {
         </div>;
     }
 
+    let defaultTransitionName = "threeFallV";
+    if (typeof document == "object") {
+        if (/Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor)) {
+            // safari animation bug when using threeFallV
+            defaultTransitionName = 'slideDown';
+        }
+    }
+
     ReactDOM.render(<Dialog
         prefixCls="kuma-dlg"
         className="kuma-dlg-confirm"
@@ -101,7 +109,7 @@ export default function (props) {
         closable={true}
         title=""
         footer=""
-        transitionName={props.transitionName || "threeFallV"}
+        transitionName={props.transitionName || defaultTransitionName}
         maskTransitionName={props.transitionName || "fade"} width={width}>
         <div>{body} {footer}</div>
     </Dialog>, div, function () {

@@ -2,6 +2,9 @@
 
 ---
 
+## 0.3.8
+`FIXED` fix safari animation bug.
+
 ## 0.3.7
 `FIXED` confirm content's wrap bug
 
