@@ -2,6 +2,9 @@
 
 ---
 
+## 0.3.9
+`FIXED` remove console
+
 ## 0.3.8
 `FIXED` fix safari animation bug.
 

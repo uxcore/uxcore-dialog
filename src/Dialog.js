@@ -39,7 +39,6 @@ export default class Dialog extends React.Component {
                 transitionName = 'slideDown';
             }
         }
-        console.log(transitionName);
         const defaultFooter = [
             <Button key="confirm"
                 type="primary"
