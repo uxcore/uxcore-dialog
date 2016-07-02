@@ -2,6 +2,9 @@
 
 ---
 
+## 0.3.10
+`NEW` add polish support.
+
 ## 0.3.9
 `FIXED` remove console
 
