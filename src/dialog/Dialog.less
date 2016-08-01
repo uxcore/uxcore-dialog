@@ -1,15 +1,34 @@
 @__dialog-prefix-cls: kuma-dlg;
 
-.@{__dialog-prefix-cls} {
-    outline: none;
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
+.@{__dialog-prefix-cls}-wrap {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+    outline: 0 none;
 
-    &-hidden, &-wrap-hidden > & {
-        display: none;
+    &.vertical-center-dailog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .@{__dialog-prefix-cls} {
+            top: 0;
+        }
     }
+
+    .@{__dialog-prefix-cls} {
+        position: relative;
+        top: 100px;
+        width: auto;
+        margin: 0 auto;
+    }
+}
+
+.@{__dialog-prefix-cls} {
 
     &-title {
         margin: 0;
@@ -32,6 +51,8 @@
         position: absolute;
         right: 16px;
         top: 6px;
+        background: none;
+        border: 0 none;
         font-size: 16px;
         cursor: pointer;
         outline: none;

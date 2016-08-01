@@ -1,47 +1,55 @@
 {
- "name": "uxcore-dialog",
- "version": "0.3.10",
- "description": "uxcore-dialog ui componment for react",
- "main": "build/index.js",
- "scripts": {
-  "start": "uxcore-tools run start",
-  "server": "uxcore-tools run server",
-  "build": "uxcore-tools run build",
-  "test": "uxcore-tools run test",
-  "coverage": "uxcore-tools run coverage",
-  "pub": "uxcore-tools run pub",
-  "dep": "uxcore-tools run dep"
- },
- "repository": {
-  "type": "git",
-  "url": "https://github.com/uxcore/uxcore-dialog.git"
- },
- "keywords": [
-  "react",
-  "react-component",
-  "react-uxcore-dialog",
-  "uxcore-dialog"
- ],
- "author": "vincent.bian",
- "license": "MIT",
- "bugs": {
-  "url": "https://github.com/uxcore/uxcore-dialog/issues"
- },
- "homepage": "https://github.com/uxcore/uxcore-dialog",
- "devDependencies": {
-  "console-polyfill": "^0.2.2",
-  "es5-shim": "^4.5.8",
-  "kuma-base": "1.x",
-  "react": "15.x",
-  "react-dom": "15.x",
-  "uxcore-kuma": "2.x",
-  "uxcore-tools": "0.2.x"
- },
- "dependencies": {
-  "classnames": "^2.1.2",
-  "object-assign": "^4.0.0",
-  "rc-dialog": "~5.4.0",
-  "rc-util": "~2.0.3",
-  "uxcore-button": "~0.4.0"
- }
+  "name": "uxcore-dialog",
+  "version": "0.3.10",
+  "description": "uxcore-dialog ui componment for react",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "uxcore-tools run start",
+    "server": "uxcore-tools run server",
+    "lint": "uxcore-tools run lint",
+    "build": "uxcore-tools run build",
+    "test": "uxcore-tools run test",
+    "coverage": "uxcore-tools run coverage",
+    "pub": "uxcore-tools run pub",
+    "dep": "uxcore-tools run dep",
+    "tnpm-dep": "uxcore-tools run tnpm-dep",
+    "chrome": "uxcore-tools run chrome",
+    "browsers": "uxcore-tools run browsers",
+    "saucelabs": "uxcore-tools run saucelabs",
+    "update": "uxcore-tools run update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uxcore/uxcore-dialog.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "react-uxcore-dialog",
+    "uxcore-dialog"
+  ],
+  "author": "vincent.bian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uxcore/uxcore-dialog/issues"
+  },
+  "homepage": "https://github.com/uxcore/uxcore-dialog",
+  "devDependencies": {
+    "console-polyfill": "^0.2.2",
+    "es5-shim": "^4.5.8",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "expect.js": "~0.3.1",
+    "kuma-base": "1.x",
+    "react": "0.14.x",
+    "react-addons-test-utils": "0.14.x",
+    "react-dom": "0.14.x",
+    "uxcore-tools": "0.2.x"
+  },
+  "dependencies": {
+    "classnames": "^2.1.2",
+    "object-assign": "^4.0.0",
+    "rc-dialog": "~6.2.0",
+    "uxcore-button": "~0.4.0"
+  }
 }

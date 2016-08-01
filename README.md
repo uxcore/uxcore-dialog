@@ -1,52 +1,84 @@
 # uxcore-dialog
----
 
-## TL;DR
+Dialog Component base on React.
 
-dialog ui component for react
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
+[![Dependency Status][dep-image]][dep-url]
+[![devDependency Status][devdep-image]][devdep-url] 
+[![NPM downloads][downloads-image]][npm-url]
+[![Sauce Test Status][sauce-image]][sauce-url]
 
-#### setup develop environment
+[npm-image]: http://img.shields.io/npm/v/uxcore-dialog.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/uxcore-dialog
+[travis-image]: https://img.shields.io/travis/uxcore/uxcore-dialog.svg?style=flat-square
+[travis-url]: https://travis-ci.org/uxcore/uxcore-dialog
+[coveralls-image]: https://img.shields.io/coveralls/uxcore/uxcore-dialog.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/uxcore/uxcore-dialog?branch=master
+[dep-image]: http://img.shields.io/david/uxcore/uxcore-dialog.svg?style=flat-square
+[dep-url]: https://david-dm.org/uxcore/uxcore-dialog
+[devdep-image]: http://img.shields.io/david/dev/uxcore/uxcore-dialog.svg?style=flat-square
+[devdep-url]: https://david-dm.org/uxcore/uxcore-dialog#info=devDependencies
+[downloads-image]: https://img.shields.io/npm/dm/uxcore-dialog.svg
+[sauce-image]: https://saucelabs.com/browser-matrix/uxcore-dialog.svg
+[sauce-url]: https://saucelabs.com/u/uxcore-dialog
+
+### Development
 
 ```sh
-$ git clone https://github.com/uxcore/uxcore-dialog
-$ cd uxcore-dialog
-$ npm install
-$ gulp server
+git clone https://github.com/uxcore/uxcore-dialog
+cd uxcore-dialog
+npm install
+npm run server
 ```
 
-## Usage
+if you'd like to save your install time，you can use uxcore-tools globally.
 
-```js
-var Dialog = require('uxcore-dialog');
-React.render(
-  (<Dialog title="第一个 Dialog"
-      visible={this.state.visible}
-      onOk={this.handleOk.bind(this)}
-      onCancel={this.handleCancel.bind(this)}>
-      <p>对话框的内容</p>
-  </Dialog>),
-  document.getElementById('content')
-);
+```sh
+npm install uxcore-tools -g
+git clone https://github.com/uxcore/uxcore-dialog
+cd uxcore-dialog
+npm install
+npm run dep
+npm run start
 ```
 
-## demo
+### Test Case
 
-见 http://uxcore.github.io/uxcore/components/dialog/
+```sh
+npm run test
+```
+
+### Coverage
+
+```sh
+npm run coverage
+```
+
+## Demo
+
+http://uxcore.github.io/components/dialog
 
 ## API
 
 | 参数       | 说明           | 类型             | 默认值       |
 |------------|----------------|------------------|--------------|
-| title      | 标题           | React.Element    | 无           |
-| visible      | 对话框是否可见  | Boolean    | 无           |
-| mousePosition      | 鼠标位置，设置弹窗初始位置           | {x:number,y:number}   | 无           |
-| onOk       | 点击确定回调       | function         | 无           |
-| onCancel   | 点击遮罩层或右上角叉或取消按钮的回调  | function  | 无           |
-| width      | 宽度           | String or Number | 520           |
-| footer     | 底部内容       | React.Element    | 确定取消按钮 |
+| title      | Title of the dialog | String | React.Element    | 无           |
+| visible      | current dialog's visible status  | Boolean    | false |
+| mousePosition |  set pageX and pageY of current mouse(it will cause transform origin to be set). | {x:number,y:number}   | 无 |
+| onOk       | the callback when ok clicked | function | 无 |
+| onCancel   | the callback when dialog closed  | function  | 无  |
+| width      | dialog width | String or Number | 520           |
+| footer     | footer of the dialog       | React.Element    |  |
 | closable | whether show close button and click mask to close | Boolean | true |
 | maskClosable | whether click mask to close, this prop will be ignored if set closable prop to false | Boolean | true |
-| locale     | 国际化(包括 `zh-cn`, `en-us`, 和 `pl-pl`)    | String     |  `zh-cn`
+| locale     | 国际化(包括 `zh-cn`, `en-us`, 和 `pl-pl`)    | String     |  `zh-cn` |
+| className | additional className for dialog | string | |
+| wrapClassName | additional className for dialog wrap | string | `vertical-center-dailog` for vertical align the dialog |
+| style | Root style for dialog element.Such as width, height | Object | {} |
+| zIndex |  | Number | |
+| bodyStyle | body style for dialog body element.Such as height | Number | {} |
 
 ### Dialog.xxx()
 

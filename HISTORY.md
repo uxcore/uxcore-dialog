@@ -2,6 +2,11 @@
 
 ---
 
+## 0.4.0
+`NEW` upgrade to rc-dialog@0.6.2
+`NEW` support center vertically 
+`FIXED` when confirmbox's title or content is english words, the line would not break.  
+
 ## 0.3.10
 `NEW` add polish support.
 

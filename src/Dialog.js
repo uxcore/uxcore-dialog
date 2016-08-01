@@ -74,6 +74,7 @@ export default class Dialog extends React.Component {
 Dialog.defaultProps = {
     prefixCls: 'kuma-dlg',
     className: '',
+    wrapClassName: '',
     onOk: noop,
     locale: 'zh-cn',
     onCancel: noop,
