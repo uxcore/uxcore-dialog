@@ -1,6 +1,6 @@
 {
  "name": "uxcore-dialog",
- "version": "0.4.0",
+ "version": "0.4.1",
  "description": "uxcore-dialog ui componment for react",
  "main": "build/index.js",
  "scripts": {
@@ -37,13 +37,12 @@
  "devDependencies": {
   "console-polyfill": "^0.2.2",
   "es5-shim": "^4.5.8",
-  "eslint-config-airbnb": "^9.0.1",
-  "eslint-plugin-react": "^5.2.2",
   "expect.js": "~0.3.1",
   "kuma-base": "1.x",
   "react": "0.14.x",
   "react-addons-test-utils": "0.14.x",
   "react-dom": "0.14.x",
+  "uxcore-kuma": "2.x",
   "uxcore-tools": "0.2.x"
  },
  "dependencies": {

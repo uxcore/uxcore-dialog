@@ -2,6 +2,9 @@
 
 ---
 
+## 0.4.1
+- `CHANGED` set `vertical-center-dialog` as default wrapClassName
+
 ## 0.4.0
 - `NEW` upgrade to rc-dialog@0.6.2
 - `NEW` support center vertically 
