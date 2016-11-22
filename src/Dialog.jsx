@@ -6,6 +6,7 @@ import RcDialog from 'rc-dialog';
 import Button from 'uxcore-button';
 import React from 'react';
 import classnames from 'classnames';
+import assign from 'object-assign';
 
 import confirm from './confirm';
 import i18n from './i18n';
@@ -13,13 +14,44 @@ import i18n from './i18n';
 function noop() {
 }
 
+const htmlNode = document.documentElement;
+const supportClassList = !!htmlNode.classList;
+let isSafari = false;
+if (typeof document === 'object') {
+  if (navigator
+    && /Safari/.test(navigator.userAgent)
+    && /Apple Computer/.test(navigator.vendor)) {
+    isSafari = true;
+  }
+}
+
 export default class Dialog extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       confirmLoading: false,
-      visible: props.visible,
     };
+  }
+
+  componentWillUpdate(nextProps) {
+    const { htmlClassName } = this.props;
+    if (htmlClassName) {
+      if (nextProps.visible) {
+        if (supportClassList) {
+          htmlNode.classList.add(htmlClassName);
+        } else {
+          htmlNode.className += ` ${htmlClassName}`;
+        }
+      } else {
+        if (supportClassList) {
+          htmlNode.classList.remove(htmlClassName);
+        } else {
+          let cls = htmlNode.className;
+          cls = cls.replace(new RegExp(`\\s?${htmlClassName}`), '');
+          htmlNode.className = cls;
+        }
+      }
+    }
   }
 
   handleCancel() {
@@ -35,13 +67,9 @@ export default class Dialog extends React.Component {
     let { transitionName } = props;
     const locale = i18n[props.locale];
 
-    if (typeof document === 'object') {
-      if (navigator
-        && /Safari/.test(navigator.userAgent)
-        && /Apple Computer/.test(navigator.vendor)) {
+    if (isSafari) {
         // safari animation bug when using threeFallV
         transitionName = 'slideDown';
-      }
     }
     const defaultFooter = [
       <Button
@@ -106,31 +134,36 @@ Dialog.defaultProps = {
   closable: true,
   maskClosable: false,
   title: '',
+  htmlClassName: '',
 };
 
-Dialog.info = function (props) {
-  const newProps = { ...props };
-  newProps.iconClassName = 'kuma-icon-information';
-  newProps.okCancel = false;
-  return confirm(newProps);
+Dialog.info = props => {
+  assign(props, {
+    iconClassName: 'kuma-icon-information',
+    okCancel: false,
+  });
+  return confirm(props);
 };
 
-Dialog.success = function (props) {
-  const newProps = { ...props };
-  newProps.iconClassName = 'kuma-icon-success';
-  newProps.okCancel = false;
-  return confirm(newProps);
+Dialog.success = props => {
+  assign(props, {
+    iconClassName: 'kuma-icon-success',
+    okCancel: false,
+  });
+  return confirm(props);
 };
 
-Dialog.error = function (props) {
-  const newProps = { ...props };
-  newProps.iconClassName = 'kuma-icon-error';
-  newProps.okCancel = false;
-  return confirm(newProps);
+Dialog.error = props => {
+  assign(props, {
+    iconClassName: 'kuma-icon-error',
+    okCancel: false,
+  });
+  return confirm(props);
 };
 
-Dialog.confirm = function (props) {
-  const newProps = { ...props };
-  newProps.okCancel = true;
-  return confirm(newProps);
+Dialog.confirm = props => {
+  assign(props, {
+    okCancel: true,
+  });
+  return confirm(props);
 };

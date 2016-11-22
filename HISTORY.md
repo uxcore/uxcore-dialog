@@ -2,6 +2,10 @@
 
 ---
 
+## 0.4.2
+- `NEW` props `htmlClassName`
+- `FIXED` #15
+
 ## 0.4.1
 - `CHANGED` set `vertical-center-dialog` as default wrapClassName
 

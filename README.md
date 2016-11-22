@@ -79,6 +79,7 @@ http://uxcore.github.io/components/dialog
 | style | Root style for dialog element.Such as width, height | Object | {} |
 | zIndex |  | Number | |
 | bodyStyle | body style for dialog body element.Such as height | Number | {} |
+| htmlClassName | the className added to html element when dialog is visible | String | '' |
 
 ### Dialog.xxx()
 
@@ -100,3 +101,4 @@ http://uxcore.github.io/components/dialog
 | buttonSize  |  按钮的尺寸，'small', 'medium', 'large' 三种可选 | String | 'medium'|
 | iconClassName | 图标样式名 | String | kuma-icon-caution |
 | timer | 弹框自动关闭, 2000表示2s以后关闭 | Number, false or null | false |
+| htmlClassName | the className added to html element when dialog is visible | String | '' |
