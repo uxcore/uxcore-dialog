@@ -76,7 +76,6 @@ export default class Dialog extends React.Component {
         key="confirm"
         type="primary"
         size="medium"
-        loading={props.confirmLoading}
         onClick={this.handleOk.bind(this)}
       >
         {locale.ok}

@@ -2,6 +2,9 @@
 
 ---
 
+## 0.4.3
+- `UPDATE` remove loading props on button  
+
 ## 0.4.2
 - `NEW` props `htmlClassName`
 - `FIXED` #15
