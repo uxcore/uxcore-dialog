@@ -25,6 +25,25 @@ if (typeof document === 'object') {
   }
 }
 
+const getIEVer = () => {
+  if (window) {
+    const ua = window.navigator.userAgent;
+    const idx = ua.indexOf('MSIE');
+    if (idx > 0) {
+      // "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64;
+      // Trident/6.0; SLCC2; .NET CLR 2.0.50727)"
+      return parseInt(ua.substring(idx + 5, ua.indexOf('.', idx)), 10);
+    }
+    if (ua.match(/Trident\/7\./)) {
+      // "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2;
+      // .NET CLR 2.0.50727; rv:11.0) like Gecko"
+      return 11;
+    }
+    return 0;
+  }
+  return 0;
+};
+
 export default class Dialog extends React.Component {
   constructor(props) {
     super(props);
@@ -42,14 +61,12 @@ export default class Dialog extends React.Component {
         } else {
           htmlNode.className += ` ${htmlClassName}`;
         }
+      } else if (supportClassList) {
+        htmlNode.classList.remove(htmlClassName);
       } else {
-        if (supportClassList) {
-          htmlNode.classList.remove(htmlClassName);
-        } else {
-          let cls = htmlNode.className;
-          cls = cls.replace(new RegExp(`\\s?${htmlClassName}`), '');
-          htmlNode.className = cls;
-        }
+        let cls = htmlNode.className;
+        cls = cls.replace(new RegExp(`\\s?${htmlClassName}`), '');
+        htmlNode.className = cls;
       }
     }
   }
@@ -69,7 +86,7 @@ export default class Dialog extends React.Component {
 
     if (isSafari) {
         // safari animation bug when using threeFallV
-        transitionName = 'slideDown';
+      transitionName = 'slideDown';
     }
     const defaultFooter = [
       <Button
@@ -98,7 +115,7 @@ export default class Dialog extends React.Component {
     }
     const wrapClassName = classnames({
       [props.wrapClassName]: !!props.wrapClassName,
-      'vertical-center-dialog': true,
+      'vertical-center-dialog': getIEVer() < 8,
     });
     return (<RcDialog
       onClose={this.handleCancel.bind(this)}
@@ -136,7 +153,7 @@ Dialog.defaultProps = {
   htmlClassName: '',
 };
 
-Dialog.info = props => {
+Dialog.info = (props) => {
   assign(props, {
     iconClassName: 'kuma-icon-information',
     okCancel: false,
@@ -144,7 +161,7 @@ Dialog.info = props => {
   return confirm(props);
 };
 
-Dialog.success = props => {
+Dialog.success = (props) => {
   assign(props, {
     iconClassName: 'kuma-icon-success',
     okCancel: false,
@@ -152,7 +169,7 @@ Dialog.success = props => {
   return confirm(props);
 };
 
-Dialog.error = props => {
+Dialog.error = (props) => {
   assign(props, {
     iconClassName: 'kuma-icon-error',
     okCancel: false,
@@ -160,7 +177,7 @@ Dialog.error = props => {
   return confirm(props);
 };
 
-Dialog.confirm = props => {
+Dialog.confirm = (props) => {
   assign(props, {
     okCancel: true,
   });
