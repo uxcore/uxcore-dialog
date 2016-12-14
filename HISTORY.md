@@ -2,6 +2,9 @@
 
 ---
 
+## 0.4.5
+- `CHANGED` default texts of buttons change 
+
 ## 0.4.4
 - `FIXED` position bug in IE browser
 

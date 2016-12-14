@@ -107,7 +107,7 @@ export default function (props = {}) {
   if (props.okCancel) {
     footer = (
       <div className="kuma-confirm-action">
-        <Button size={props.buttonSize || 'small'} onClick={onOk}>{locale.ok}</Button>
+        <Button size={props.buttonSize || 'small'} onClick={onOk}>{locale.confirm}</Button>
         <Button type="secondary" size={props.buttonSize || 'small'} onClick={onCancel}>{locale.cancel}</Button>
       </div>
     );

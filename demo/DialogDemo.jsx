@@ -1,6 +1,6 @@
 import Dialog from '../src/index';
 import React from 'react';
-let confirm = Dialog.confirm;
+const confirm = Dialog.confirm;
 
 export class BasicDemo extends React.Component {
   constructor(props) {
@@ -8,8 +8,8 @@ export class BasicDemo extends React.Component {
     this.state = {
       visible: false,
       hasTitle: true,
-		};
-	}
+    };
+  }
   showModal() {
     this.setState({
       visible: true,
@@ -39,31 +39,32 @@ export class BasicDemo extends React.Component {
       title = false;
     }
     return (
-			<div>
-				<label>
+      <div>
+        <label>
           <input type="checkbox" name="hasTitle" defaultChecked={this.state.hasTitle} onClick={this.toggleTitle.bind(this)} /> 显示title</label><br />
-				  <button className="kuma-button kuma-button-primary" onClick={this.showModal.bind(this)}>显示对话框</button>
-          <Dialog title={title}
-            locale="en-us"
-            visible={this.state.visible}
-            onOk={this.handleOk.bind(this)}
-            onCancel={this.handleCancel.bind(this)}
-          >
-            <p>对话框的内容</p>
-            <p>对话框的内容</p>
-            <p>对话框的内容</p>
-          </Dialog>
-			</div>
-		);
-	}
+        <button className="kuma-button kuma-button-primary" onClick={this.showModal.bind(this)}>显示对话框</button>
+        <Dialog
+          title={title}
+          locale="en-us"
+          visible={this.state.visible}
+          onOk={this.handleOk.bind(this)}
+          onCancel={this.handleCancel.bind(this)}
+        >
+          <p>对话框的内容</p>
+          <p>对话框的内容</p>
+          <p>对话框的内容</p>
+        </Dialog>
+      </div>
+    );
+  }
 }
 
 export class AsyncCloseDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        ModalText: '对话框的内容',
-        visible: false,
+      ModalText: '对话框的内容',
+      visible: false,
     };
   }
   showModal() {
@@ -131,15 +132,16 @@ export class CustomFooter extends React.Component {
     return (
       <div>
         <button className="kuma-button kuma-button-primary" onClick={this.showModal.bind(this)}>
-        显示对话框
+          显示对话框
         </button>
         <Dialog ref="modal"
           visible={this.state.visible}
           title="对话框标题" onOk={this.handleOk} onCancel={this.handleCancel.bind(this)}
           footer={[
             <button key="back" className="kuma-button kuma-button-secondary" onClick={this.handleCancel.bind(this)}>返 回</button>,
-            <button key="submit" className={'kuma-button kuma-button-primary'} onClick={this.handleOk.bind(this)}>提 交</button>
-          ]}>
+            <button key="submit" className={'kuma-button kuma-button-primary'} onClick={this.handleOk.bind(this)}>提 交</button>,
+          ]}
+        >
           <p>对话框的内容</p>
           <p>对话框的内容</p>
           <p>对话框的内容</p>
@@ -148,17 +150,18 @@ export class CustomFooter extends React.Component {
         </Dialog>
       </div>
     );
-	}
+  }
 }
 
 function showConfirm() {
   confirm({
     title: '您是否确认要删除这项内容',
+    locale: 'en-us',
     content: '一些解释',
-    onOk () {
+    onOk() {
       alert('确定');
     },
-    onCancel () {},
+    onCancel() { },
   });
 }
 
@@ -175,7 +178,7 @@ function info(autoClose) {
     title: '这是一条通知信息',
     content: '一些附加信息一些附加信息一些附加信息',
     locale: 'en-us',
-    onOk () {},
+    onOk() { },
     timer: autoClose ? 2000 : false,
     htmlClassName: 'xxx',
   });
@@ -220,5 +223,5 @@ export class InfoDemo extends React.Component {
         <button className="kuma-button kuma-button-secondary" onClick={error.bind(this, this.state.autoClose)}>失败提示</button>
       </div>
     );
-	}
+  }
 }
