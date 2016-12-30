@@ -1,8 +1,7 @@
 import expect from 'expect.js';
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { assign } from 'lodash';
-import TestUtils, { Simulate } from 'react-addons-test-utils';
 import { mount } from 'enzyme';
 import $ from 'jquery';
 import Dialog from '../src';
@@ -90,7 +89,8 @@ describe('Dialog', () => {
 
   describe('Render Function Test', () => {
     it('should correctly render the title', () => {
-      const j = getDialog({ title: 'hello' });
+      const j = getDialog({ title: 'hello', htmlClassName: 'kuma-test-diag' });
+      j.node.componentWillUpdate(j.node.props);
       expect(j.prop('className')).to.contain('our-dialog');
     });
 
@@ -124,6 +124,91 @@ describe('Dialog', () => {
       ReactDOM.render(
         <BasicDemo visible={false} />, document.getElementById('test-dialog'));
     });
+
+    it('should correctly close the dialog', (done) => {
+      appendElementToDOM('test-dialog');
+      class DialogDemo extends Component {
+
+        constructor(props) {
+          super(props);
+          this.state = {
+            visible: true,
+          };
+        }
+
+        handleOk() {
+          this.setState({ visible: false });
+        }
+
+        render() {
+          return (
+            <Dialog
+              key={Math.random().toString()}
+              title="test title"
+              onOk={this.handleOk.bind(this)}
+              visible={this.state.visible}
+            >
+              <p>哦嗨哟！</p>
+            </Dialog>
+          );
+        }
+      }
+      ReactDOM.render(
+        <DialogDemo />, document.getElementById('test-dialog'));
+      setTimeout(() => {
+        expect($('.kuma-dlg-body p').text()).to.be('哦嗨哟！');
+        $('.kuma-dlg-footer .kuma-button-primary').click();
+        setTimeout(() => {
+          expect($('.kuma-dlg-body p').length).to.be(0);
+          done();
+        }, 1000);
+      }, 100);
+    });
+
+    it('should correctly close the dialog with cancel', (done) => {
+      appendElementToDOM('test-dialog');
+      class DialogDemo extends Component {
+
+        constructor(props) {
+          super(props);
+          this.state = {
+            visible: true,
+          };
+        }
+
+        handleOk() {
+          this.setState({ visible: false });
+        }
+
+        handleCancel() {
+          this.setState({ visible: false });
+        }
+
+        render() {
+          return (
+            <Dialog
+              key={Math.random().toString()}
+              title="test title"
+              onOk={this.handleOk.bind(this)}
+              onCancel={this.handleCancel.bind(this)}
+              visible={this.state.visible}
+            >
+              <p>哦嗨哟！</p>
+            </Dialog>
+          );
+        }
+      }
+      ReactDOM.render(
+        <DialogDemo />, document.getElementById('test-dialog'));
+      setTimeout(() => {
+        expect($('.kuma-dlg-body p').text()).to.be('哦嗨哟！');
+        $('.kuma-dlg-footer .kuma-button-secondary').click();
+        setTimeout(() => {
+          expect($('.kuma-dlg-body p').length).to.be(0);
+          done();
+        }, 1000);
+      }, 100);
+    });
   });
 
   describe('Dialog Helper Method Test', () => {
@@ -156,30 +241,41 @@ describe('Dialog', () => {
     });
 
     it('Dialog.error', (done) => {
+      let test = '';
       Dialog.error({
         title: 'error',
-        onOk: () => {},
+        onOk: () => { test = 'ok'; },
         onCancel: () => {},
         width: 240,
       });
       setTimeout(() => {
         expect($('.kuma-dlg-wrap .kuma-confirm-title').text()).to.be('error');
-        cleanElements();
-        done();
+        $('.kuma-confirm-action button').click();
+        setTimeout(() => {
+          expect($('.kuma-confirm-title').length).to.be(0);
+          cleanElements();
+          done();
+        }, 1000);
       }, 100);
     });
 
     it('Dialog.confirm', (done) => {
+      let test = '';
       Dialog.confirm({
         title: 'confirm',
         onOk: () => {},
-        onCancel: () => {},
+        onCancel: () => { test = 'cancel'; },
+        htmlClassName: 'testClassName',
         width: 250,
       });
       setTimeout(() => {
         expect($('.kuma-dlg-wrap .kuma-confirm-title').text()).to.be('confirm');
-        cleanElements();
-        done();
+        $('.kuma-button-secondary').click();
+        setTimeout(() => {
+          expect($('.kuma-confirm-title').length).to.be(0);
+          cleanElements();
+          done();
+        }, 1000);
       }, 100);
     });
   });
