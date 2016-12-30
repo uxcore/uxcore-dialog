@@ -39,6 +39,7 @@
     "enzyme": "^2.7.0",
     "es5-shim": "^4.5.8",
     "expect.js": "~0.3.1",
+    "jquery": "^3.1.1",
     "kuma-base": "1.x",
     "lodash": "^4.17.3",
     "react": "0.14.x",
