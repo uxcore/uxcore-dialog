@@ -106,36 +106,29 @@
     }
 }
 
-// 3D fall - Vertical
-
-@keyframes threeFallVertical{
+@keyframes dialogSlideInDown {
     0% {
         opacity: 0;
-        transform: perspective(1300px) rotateX(-90deg);
+        transform: translateY(20%);
     }
     100% {
         opacity: 1;
-        transform: perspective(1300px) rotateX(0deg);
+        transform: translateY(0%);
     }
 }
 
-.threeFallV-enter,
-.threeFallV-appear {
-    opacity: 0;
-    transform: perspective(1300px) rotateX(-90deg);
-    animation-timing-function: ease;
-    animation-duration: .3s; 
+@keyframes dialogSlideOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
 }
 
-.threeFallV-enter-active,
-.threeFallV-appear-active {
-    visibility: visible;
-    animation-name: threeFallVertical;
-}
-
-// maskFadeIn
-
-@keyframes fadeIn {
+@keyframes dialogFadeIn {
     0% {
         opacity: 0;
     }
@@ -144,17 +137,57 @@
     }
 }
 
-.fade-enter,
-.fade-appear {
+@keyframes dialogFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.dialogFade-enter,
+.dialogFade-appear {
     opacity: 0;
-    animation-timing-function: ease;
-    animation-duration: .3s; 
+    animation-timing-function: ease-out;
+    animation-duration: .3s;
 }
 
-.fade-enter-active,
-.fade-appear-active {
-    visibility: visible;
-    animation-name: fadeIn;
+.dialogFade-enter-active,
+.dialogFade-appear-active {
+   animation-name: dialogFadeIn;
 }
 
+.dialogFade-leave {
+    opacity: 1;
+    animation-timing-function: ease-out;
+    animation-duration: .3s;
+}
+
+.dialogFade-leave-active {
+   animation-name: dialogFadeOut;
+}
+
+.dialogSlideDown-enter,
+.dialogSlideDown-appear {
+    opacity: 0;
+    transform: translateY(20%);
+    animation-timing-function: ease-out;
+    animation-duration: .3s;
+}
+
+.dialogSlideDown-enter-active,
+.dialogSlideDown-appear-active {
+    animation-name: dialogSlideInDown;
+}
+
+.dialogSlideDown-leave {
+    opacity: 1;
+    animation-timing-function: ease-out;
+    animation-duration: .3s;
+}
+
+.dialogSlideDown-leave-active {
+    animation-name: dialogSlideOutDown;
+}
 

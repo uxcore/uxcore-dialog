@@ -2,6 +2,9 @@
 
 ---
 
+## 0.5.0
+- `CHANGED` change transitionName to `slideDown`
+
 ## 0.4.5
 - `CHANGED` default texts of buttons change 
 

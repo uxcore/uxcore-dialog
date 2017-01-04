@@ -130,7 +130,6 @@ export default class Dialog extends React.Component {
 }
 
 Dialog.propTypes = {
-  visible: React.PropTypes.bool,
   onCancel: React.PropTypes.func,
   onOk: React.PropTypes.func,
 };
@@ -143,8 +142,8 @@ Dialog.defaultProps = {
   locale: 'zh-cn',
   onCancel: noop,
   width: 520,
-  transitionName: 'threeFallV',
-  maskTransitionName: 'fade',
+  transitionName: 'dialogSlideDown',
+  maskTransitionName: 'dialogFade',
   confirmLoading: false,
   visible: false,
   closable: true,
