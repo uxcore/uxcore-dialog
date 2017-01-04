@@ -132,6 +132,7 @@ export default class Dialog extends React.Component {
 Dialog.propTypes = {
   onCancel: React.PropTypes.func,
   onOk: React.PropTypes.func,
+  htmlClassName: React.PropTypes.string,
 };
 
 Dialog.defaultProps = {

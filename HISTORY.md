@@ -4,6 +4,7 @@
 
 ## 0.5.0
 - `CHANGED` change transitionName to `slideDown`
+- `NEW` add test case
 
 ## 0.4.5
 - `CHANGED` default texts of buttons change 
