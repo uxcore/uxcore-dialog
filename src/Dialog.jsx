@@ -52,6 +52,15 @@ export default class Dialog extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const { getContainer } = this.props;
+    if (getContainer) {
+      /* eslint-disable no-underscore-dangle */
+      this.dialog._container = this.props.getContainer();
+      /* eslint-enable no-underscore-dangle */
+    }
+  }
+
   componentWillUpdate(nextProps) {
     const { htmlClassName } = this.props;
     if (htmlClassName) {
@@ -69,6 +78,13 @@ export default class Dialog extends React.Component {
         htmlNode.className = cls;
       }
     }
+  }
+
+  saveRef(refName) {
+    const me = this;
+    return (c) => {
+      me[refName] = c;
+    };
   }
 
   handleCancel() {
@@ -125,6 +141,7 @@ export default class Dialog extends React.Component {
       className={className}
       wrapClassName={wrapClassName}
       visible={props.visible}
+      ref={this.saveRef('dialog')}
     />);
   }
 }
@@ -133,6 +150,7 @@ Dialog.propTypes = {
   onCancel: React.PropTypes.func,
   onOk: React.PropTypes.func,
   htmlClassName: React.PropTypes.string,
+  getContainer: React.PropTypes.func,
 };
 
 Dialog.defaultProps = {

@@ -2,6 +2,9 @@
 
 ---
 
+## 0.5.1
+- `NEW` add new Prop `getContainer`
+
 ## 0.5.0
 - `CHANGED` change transitionName to `slideDown`
 - `NEW` add test case

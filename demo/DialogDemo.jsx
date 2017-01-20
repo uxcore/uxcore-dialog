@@ -49,6 +49,12 @@ export class BasicDemo extends React.Component {
           visible={this.state.visible}
           onOk={this.handleOk.bind(this)}
           onCancel={this.handleCancel.bind(this)}
+          getContainer={() => {
+            const container = document.createElement('div');
+            container.className = 'uxcore';
+            document.body.appendChild(container);
+            return container;
+          }}
         >
           <p>对话框的内容</p>
           <p>对话框的内容</p>
