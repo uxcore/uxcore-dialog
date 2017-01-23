@@ -124,7 +124,7 @@
     }
     100% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(50px);
     }
 }
 
@@ -149,8 +149,8 @@
 .dialogFade-enter,
 .dialogFade-appear {
     opacity: 0;
-    animation-timing-function: ease-out;
-    animation-duration: .3s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-duration: .4s;
 }
 
 .dialogFade-enter-active,
@@ -160,8 +160,8 @@
 
 .dialogFade-leave {
     opacity: 1;
-    animation-timing-function: ease-out;
-    animation-duration: .3s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-duration: .4s;
 }
 
 .dialogFade-leave-active {
@@ -171,9 +171,9 @@
 .dialogSlideDown-enter,
 .dialogSlideDown-appear {
     opacity: 0;
-    transform: translateY(30px);
-    animation-timing-function: ease-out;
-    animation-duration: .3s;
+    transform: translateY(50px);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-duration: .4s;
 }
 
 .dialogSlideDown-enter-active,
@@ -183,8 +183,8 @@
 
 .dialogSlideDown-leave {
     opacity: 1;
-    animation-timing-function: ease-out;
-    animation-duration: .3s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-duration: .4s;
 }
 
 .dialogSlideDown-leave-active {
