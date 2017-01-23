@@ -130,6 +130,7 @@ export default function (props = {}) {
       maskTransitionName={newProps.maskTransitionName}
       width={newProps.width}
       htmlClassName={newProps.htmlClassName}
+      getContainer={newProps.getContainer}
     >
       <div>{body} {footer}</div>
     </Dialog>, div);

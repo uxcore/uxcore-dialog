@@ -4,10 +4,13 @@
     "react"
   ],
   "env": {
-    "browser": true
+    "browser": true,
+    "mocha": true
   },
   "rules": {
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-no-bind": "off"
+    "react/jsx-no-bind": "off",
+    "react/no-unused-prop-types": "off",
+    "jsx-a11y/label-has-for": "off"
   }
 }

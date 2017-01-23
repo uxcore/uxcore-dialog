@@ -2,7 +2,11 @@
 
 ---
 
-## 0.5.1
+## 0.5.3
+
+- `CHANGED` improved `getContainer`
+
+## 0.5.2
 - `NEW` add new Prop `getContainer`
 
 ## 0.5.0

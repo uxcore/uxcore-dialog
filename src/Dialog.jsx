@@ -2,12 +2,12 @@
  * @author: vincent
  * @date: 15/5/19
  */
-import RcDialog from 'rc-dialog';
 import Button from 'uxcore-button';
 import React from 'react';
 import classnames from 'classnames';
 import assign from 'object-assign';
 
+import RcDialog from './RcDialog';
 import confirm from './confirm';
 import i18n from './i18n';
 
@@ -16,14 +16,6 @@ function noop() {
 
 const htmlNode = document.documentElement;
 const supportClassList = !!htmlNode.classList;
-let isSafari = false;
-if (typeof document === 'object') {
-  if (navigator
-    && /Safari/.test(navigator.userAgent)
-    && /Apple Computer/.test(navigator.vendor)) {
-    isSafari = true;
-  }
-}
 
 const getIEVer = () => {
   if (window) {
@@ -50,15 +42,6 @@ export default class Dialog extends React.Component {
     this.state = {
       confirmLoading: false,
     };
-  }
-
-  componentDidMount() {
-    const { getContainer } = this.props;
-    if (getContainer) {
-      /* eslint-disable no-underscore-dangle */
-      this.dialog._container = this.props.getContainer();
-      /* eslint-enable no-underscore-dangle */
-    }
   }
 
   componentWillUpdate(nextProps) {
@@ -97,13 +80,8 @@ export default class Dialog extends React.Component {
 
   render() {
     const props = this.props;
-    let { transitionName } = props;
     const locale = i18n[props.locale];
 
-    if (isSafari) {
-        // safari animation bug when using threeFallV
-      transitionName = 'slideDown';
-    }
     const defaultFooter = [
       <Button
         key="confirm"
@@ -137,11 +115,12 @@ export default class Dialog extends React.Component {
       onClose={this.handleCancel.bind(this)}
       footer={footer}
       {...props}
-      transitionName={transitionName}
       className={className}
       wrapClassName={wrapClassName}
       visible={props.visible}
-      ref={this.saveRef('dialog')}
+      ref={(c) => {
+        this.dialog = c;
+      }}
     />);
   }
 }
