@@ -149,7 +149,7 @@
 .dialogFade-enter,
 .dialogFade-appear {
     opacity: 0;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: @transition-ease;
     animation-duration: .4s;
 }
 
@@ -160,7 +160,7 @@
 
 .dialogFade-leave {
     opacity: 1;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: @transition-ease;
     animation-duration: .4s;
 }
 
@@ -172,7 +172,7 @@
 .dialogSlideDown-appear {
     opacity: 0;
     transform: translateY(50px);
-    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: @transition-ease;
     animation-duration: .4s;
 }
 
@@ -183,7 +183,7 @@
 
 .dialogSlideDown-leave {
     opacity: 1;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: @transition-ease;
     animation-duration: .4s;
 }
 

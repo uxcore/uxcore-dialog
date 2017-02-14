@@ -2,6 +2,10 @@
 
 ---
 
+## 0.5.5
+
+- `CHANGED` use global transition ease
+
 ## 0.5.3
 
 - `CHANGED` improved `getContainer`
