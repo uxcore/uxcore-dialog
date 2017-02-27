@@ -32,34 +32,33 @@
 
     &-title {
         margin: 0;
-        font-size: 14px;
-        line-height: 40px;
-        color: @basic-100;
-        text-indent: 20px;
+        font-size: 16px;
+        line-height: 64px;
+        color: @text-primary-color;
+        text-indent: 24px;
     }
 
     &-content {
         position: relative;
         background-color: @basic-100;
-        box-shadow: 0 0 4px 0 fadeout(#000, 80%);
+        box-shadow: 0 4px 15px 0 rgba(0,0,0,0.15);
         outline: 0;
-        border-radius: 3px;
+        border-radius: 6px;
         overflow: hidden;
     }
 
     &-close {
         position: absolute;
         right: 16px;
-        top: 6px;
+        top: 8px;
         background: none;
         border: 0 none;
         font-size: 16px;
         cursor: pointer;
         outline: none;
-        color: @basic-100;
+        color: @text-primary-color;
 
         &:hover {
-            color: @basic-100;
             text-decoration: none;
         }
 
@@ -78,27 +77,25 @@
     
     &.@{__dialog-prefix-cls}-noheader {
         .@{__dialog-prefix-cls}-close {
-            right: 10px;
-            top: 6px;
+            right: 16px;
+            top: 8px;
             color: @gray-lighter;
         }
     }
 
     &-header {
-        height: 40px;
-        background-color: @brand-primary;
+        height: 64px;
     }
 
     &-body {
-        padding: 15px 20px;
+        padding: 16px 24px 40px;
         font-size: 12px;
         line-height: 1.5;
     }
 
     &-footer {
-        padding: 12px 0;
-        background-color: @basic-300;
-        text-align: center;
+        padding: 16px 16px 16px 24px;
+        text-align: right;
         button + button {
             margin-left: 8px;
             margin-bottom: 0;

@@ -2,6 +2,10 @@
 
 ---
 
+## 0.6.0
+
+- `CHANGED` new style
+
 ## 0.5.5
 
 - `CHANGED` use global transition ease
@@ -14,6 +18,7 @@
 - `NEW` add new Prop `getContainer`
 
 ## 0.5.0
+
 - `CHANGED` change transitionName to `slideDown`
 - `NEW` add test case
 

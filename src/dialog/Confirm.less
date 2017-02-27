@@ -1,53 +1,58 @@
 @__confirm-prefix-cls: kuma-confirm;
 .@{__dialog-prefix-cls}-confirm {
-    .@{__dialog-prefix-cls}-body {
-        padding: 0;
-        .@{__confirm-prefix-cls}-body {
-            padding: 20px;
-            white-space: nowrap;
-            > .kuma-icon {
-                display: inline-block;
-                vertical-align: middle;
-                font-size: 24px;
-                &.kuma-icon-caution {
-                    color: @brand-warning;
-                }
-                &.kuma-icon-information {
-                    color: @brand-info;
-                }
-                &.kuma-icon-success {
-                    color: @brand-success;
-                }
-                &.kuma-icon-error {
-                    color: @brand-danger;
-                }
-            }
+  .@{__dialog-prefix-cls}-body {
+    padding: 0;
+    .@{__confirm-prefix-cls}-body {
+      padding: 24px 16px 20px 24px;
+      white-space: nowrap;
+      >.kuma-icon {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 40px;
+        line-height: 40px;
+        &.kuma-icon-caution {
+          color: @brand-warning;
         }
-        .@{__confirm-prefix-cls}-title {
-            margin-left: 12px;
-            display: inline-block;
-            vertical-align: middle;
-            font-size: 14px;
-            color: @text-primary-color;
-            max-width: 220px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+        &.kuma-icon-information {
+          color: @brand-info;
         }
-        .@{__confirm-prefix-cls}-content {
-            margin-left: 36px;
-            font-size: 12px;
-            color: @text-secondary-color;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+        &.kuma-icon-success {
+          color: @brand-success;
         }
-        .@{__confirm-prefix-cls}-action {
-            padding: 12px 0;
-            background-color: @basic-300;
-            text-align: center;
-            button + button {
-                margin-left: 8px;
-                margin-bottom: 0;
-            }
+        &.kuma-icon-error {
+          color: @brand-danger;
         }
+      }
     }
+    .@{__confirm-prefix-cls}-title {
+      margin: 0 0 16px 16px;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 16px;
+      line-height: 16px;
+      color: @text-primary-color;
+      max-width: 220px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .@{__confirm-prefix-cls}-body-main {
+      display: inline-block;
+      max-width: 240px;
+    }
+    .@{__confirm-prefix-cls}-content {
+      margin-left: 16px;
+      font-size: 12px;
+      color: @text-secondary-color;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .@{__confirm-prefix-cls}-action {
+      padding: 12px 16px 16px 24px;
+      text-align: right;
+      button+button {
+        margin-left: 8px;
+        margin-bottom: 0;
+      }
+    }
+  }
 }

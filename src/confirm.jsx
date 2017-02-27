@@ -15,7 +15,7 @@ export default function (props = {}) {
 
   const newProps = assign({
     iconClassName: 'kuma-icon-caution',
-    width: 300,
+    width: 320,
     locale: 'zh-cn',
   }, props);
   const locale = i18n[newProps.locale];
@@ -88,8 +88,10 @@ export default function (props = {}) {
   const body = (
     <div className="kuma-confirm-body">
       <i className={`kuma-icon ${newProps.iconClassName}`} />
-      <span className="kuma-confirm-title">{newProps.title}</span>
-      <div className="kuma-confirm-content">{newProps.content}</div>
+      <div className="kuma-confirm-body-main">
+        <span className="kuma-confirm-title">{newProps.title}</span>
+        <div className="kuma-confirm-content">{newProps.content}</div>
+      </div>
     </div>
   );
   let footer;
@@ -97,8 +99,8 @@ export default function (props = {}) {
   if (newProps.okCancel) {
     footer = (
       <div className="kuma-confirm-action">
-        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>{locale.confirm}</Button>
         <Button type="secondary" size={newProps.buttonSize || 'small'} onClick={onCancel}>{locale.cancel}</Button>
+        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>{locale.confirm}</Button>
       </div>
     );
   } else {

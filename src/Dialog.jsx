@@ -84,20 +84,20 @@ export default class Dialog extends React.Component {
 
     const defaultFooter = [
       <Button
-        key="confirm"
-        type="primary"
-        size="medium"
-        onClick={this.handleOk.bind(this)}
-      >
-        {locale.ok}
-      </Button>,
-      <Button
         key="cancel"
         type="secondary"
         size="medium"
         onClick={this.handleCancel.bind(this)}
       >
         {locale.cancel}
+      </Button>,
+      <Button
+        key="confirm"
+        type="primary"
+        size="medium"
+        onClick={this.handleOk.bind(this)}
+      >
+        {locale.ok}
       </Button>,
     ];
     const footer = props.footer || defaultFooter;
