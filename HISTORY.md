@@ -2,6 +2,10 @@
 
 ---
 
+## 0.6.1
+
+- `CHANGED` change button size
+
 ## 0.6.0
 
 - `CHANGED` new style

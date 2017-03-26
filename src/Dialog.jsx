@@ -86,7 +86,7 @@ export default class Dialog extends React.Component {
       <Button
         key="cancel"
         type="secondary"
-        size="medium"
+        size="small"
         onClick={this.handleCancel.bind(this)}
       >
         {locale.cancel}
@@ -94,7 +94,7 @@ export default class Dialog extends React.Component {
       <Button
         key="confirm"
         type="primary"
-        size="medium"
+        size="small"
         onClick={this.handleOk.bind(this)}
       >
         {locale.ok}

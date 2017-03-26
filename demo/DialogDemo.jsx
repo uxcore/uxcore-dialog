@@ -157,10 +157,10 @@ export class CustomFooter extends React.Component {
           footer={[
             <button
               key="back"
-              className="kuma-button kuma-button-secondary"
+              className="kuma-button kuma-button-secondary kuma-button-sm"
               onClick={this.handleCancel.bind(this)}
             >返 回</button>,
-            <button key="submit" className={'kuma-button kuma-button-primary'} onClick={this.handleOk.bind(this)}>提 交</button>,
+            <button key="submit" className={'kuma-button kuma-button-primary kuma-button-sm'} onClick={this.handleOk.bind(this)}>提 交</button>,
           ]}
         >
           <p>对话框的内容</p>
