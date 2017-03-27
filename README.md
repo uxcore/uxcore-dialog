@@ -100,5 +100,6 @@ http://uxcore.github.io/components/dialog
 | width      | 宽度           | String or Number | 416           |
 | buttonSize  |  按钮的尺寸，'small', 'medium', 'large' 三种可选 | String | 'medium'|
 | iconClassName | 图标样式名 | String | kuma-icon-caution |
+| icon       | 自定义图标 | Icon Element |  uxcore-icon 的实例，http://uxco.re/components/icon/   |
 | timer | 弹框自动关闭, 2000表示2s以后关闭 | Number, false or null | false |
 | htmlClassName | the className added to html element when dialog is visible | String | '' |

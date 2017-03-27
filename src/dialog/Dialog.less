@@ -31,9 +31,8 @@
 .@{__dialog-prefix-cls} {
 
     &-title {
-        margin: 0;
+        margin: 20px 0px 10px;
         font-size: 16px;
-        line-height: 64px;
         color: @text-primary-color;
         text-indent: 24px;
     }
@@ -49,7 +48,7 @@
 
     &-close {
         position: absolute;
-        right: 16px;
+        right: 13px;
         top: 8px;
         background: none;
         border: 0 none;
@@ -68,6 +67,7 @@
             -webkit-font-smoothing: antialiased;
             -webkit-text-stroke-width: .2px;
             -moz-osx-font-smoothing: grayscale;
+            color: @normal-alpha-4;
             &:after {
                 content: '';
             }
@@ -84,7 +84,7 @@
     }
 
     &-header {
-        height: 64px;
+        // height: 64px;
     }
 
     &-body {

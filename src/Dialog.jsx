@@ -6,6 +6,7 @@ import Button from 'uxcore-button';
 import React from 'react';
 import classnames from 'classnames';
 import assign from 'object-assign';
+import Icon from 'uxcore-icon';
 
 import RcDialog from './RcDialog';
 import confirm from './confirm';
@@ -111,17 +112,19 @@ export default class Dialog extends React.Component {
       [props.wrapClassName]: !!props.wrapClassName,
       'vertical-center-dialog': getIEVer() < 8,
     });
-    return (<RcDialog
-      onClose={this.handleCancel.bind(this)}
-      footer={footer}
-      {...props}
-      className={className}
-      wrapClassName={wrapClassName}
-      visible={props.visible}
-      ref={(c) => {
-        this.dialog = c;
-      }}
-    />);
+    return (
+      <RcDialog
+        onClose={this.handleCancel.bind(this)}
+        footer={footer}
+        {...props}
+        className={className}
+        wrapClassName={wrapClassName}
+        visible={props.visible}
+        ref={(c) => {
+          this.dialog = c;
+        }}
+      />
+    );
   }
 }
 
@@ -152,7 +155,7 @@ Dialog.defaultProps = {
 
 Dialog.info = (props) => {
   assign(props, {
-    iconClassName: 'kuma-icon-information',
+    icon: <Icon name="tishi-full" />,
     okCancel: false,
   });
   return confirm(props);
@@ -160,7 +163,7 @@ Dialog.info = (props) => {
 
 Dialog.success = (props) => {
   assign(props, {
-    iconClassName: 'kuma-icon-success',
+    icon: <Icon name="chenggong-full" />,
     okCancel: false,
   });
   return confirm(props);
@@ -168,7 +171,7 @@ Dialog.success = (props) => {
 
 Dialog.error = (props) => {
   assign(props, {
-    iconClassName: 'kuma-icon-error',
+    icon: <Icon name="biaodanlei-tongyongqingchu" />,
     okCancel: false,
   });
   return confirm(props);
@@ -176,6 +179,7 @@ Dialog.error = (props) => {
 
 Dialog.confirm = (props) => {
   assign(props, {
+    icon: <Icon name="jinggao-full" />,
     okCancel: true,
   });
   return confirm(props);

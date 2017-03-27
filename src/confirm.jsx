@@ -85,9 +85,15 @@ export default function (props = {}) {
     }
   }
 
+  let icon = <i className={`kuma-icon ${newProps.iconClassName}`} />;
+
+  if (newProps.icon) {
+    icon = newProps.icon;
+  }
+
   const body = (
     <div className="kuma-confirm-body">
-      <i className={`kuma-icon ${newProps.iconClassName}`} />
+      {icon}
       <div className="kuma-confirm-body-main">
         <span className="kuma-confirm-title">{newProps.title}</span>
         <div className="kuma-confirm-content">{newProps.content}</div>

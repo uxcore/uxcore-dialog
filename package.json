@@ -1,6 +1,6 @@
 {
  "name": "uxcore-dialog",
- "version": "0.6.1",
+ "version": "0.7.0",
  "description": "uxcore-dialog ui componment for react",
  "main": "build/index.js",
  "scripts": {
@@ -52,6 +52,7 @@
   "classnames": "^2.1.2",
   "object-assign": "^4.0.0",
   "rc-dialog": "~6.2.0",
-  "uxcore-button": "~0.4.0"
+  "uxcore-button": "~0.4.0",
+  "uxcore-icon": "^0.1.6"
  }
 }

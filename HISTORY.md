@@ -2,6 +2,11 @@
 
 ---
 
+## 0.7.0
+
+- `CHANGED` use new icon
+- `NEW` add new props `icon`
+
 ## 0.6.1
 
 - `CHANGED` change button size
