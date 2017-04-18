@@ -103,3 +103,5 @@ http://uxcore.github.io/components/dialog
 | icon       | 自定义图标 | Icon Element |  uxcore-icon 的实例，http://uxco.re/components/icon/   |
 | timer | 弹框自动关闭, 2000表示2s以后关闭 | Number, false or null | false |
 | htmlClassName | the className added to html element when dialog is visible | String | '' |
+| okText   | 确认按钮文字 , 0.7.1 版本后支持 | string | - |
+| cancelText | 取消按钮文字	, 0.7.1 版本后支持 | string | - |

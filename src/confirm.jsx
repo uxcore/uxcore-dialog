@@ -105,14 +105,14 @@ export default function (props = {}) {
   if (newProps.okCancel) {
     footer = (
       <div className="kuma-confirm-action">
-        <Button type="secondary" size={newProps.buttonSize || 'small'} onClick={onCancel}>{locale.cancel}</Button>
-        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>{locale.confirm}</Button>
+        <Button type="secondary" size={newProps.buttonSize || 'small'} onClick={onCancel}>{newProps.cancelText || locale.cancel}</Button>
+        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>{newProps.okText || locale.confirm}</Button>
       </div>
     );
   } else {
     footer = (
       <div className="kuma-confirm-action">
-        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>{locale.isee}</Button>
+        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>{newProps.okText || locale.isee}</Button>
       </div>
     );
   }

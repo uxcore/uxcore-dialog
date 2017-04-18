@@ -2,6 +2,11 @@
 
 ---
 
+## 0.7.1
+
+- `CHANGED` update `rc-dialog` to ~6.5.0
+- `CHNAGED` add footer top border line (style)
+
 ## 0.7.0
 
 - `CHANGED` use new icon
