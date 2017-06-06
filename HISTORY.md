@@ -2,6 +2,10 @@
 
 ---
 
+## 0.7.2
+
+- `FIXED` close icon encoding bug
+
 ## 0.7.1
 
 - `CHANGED` update `rc-dialog` to ~6.5.0
