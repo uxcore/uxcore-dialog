@@ -15,8 +15,6 @@ import i18n from './i18n';
 function noop() {
 }
 
-const htmlNode = document.documentElement;
-const supportClassList = !!htmlNode.classList;
 
 const getIEVer = () => {
   if (window) {
@@ -47,6 +45,8 @@ export default class Dialog extends React.Component {
 
   componentWillUpdate(nextProps) {
     const { htmlClassName } = this.props;
+    const htmlNode = document.documentElement;
+    const supportClassList = !!htmlNode.classList;
     if (htmlClassName) {
       if (nextProps.visible) {
         if (supportClassList) {
