@@ -6,10 +6,10 @@ import React from 'react';
 import Dialog from './Dialog';
 import i18n from './i18n';
 
-const htmlNode = document.documentElement;
-const supportClassList = !!htmlNode.classList;
 
 export default function (props = {}) {
+  const htmlNode = document.documentElement;
+  const supportClassList = !!htmlNode.classList;
   const div = document.createElement('div');
   document.body.appendChild(div);
 

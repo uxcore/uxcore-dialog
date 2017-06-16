@@ -2,6 +2,10 @@
 
 ---
 
+## 0.7.3
+
+- `FIXED` fix server render bug
+
 ## 0.7.2
 
 - `FIXED` close icon encoding bug
