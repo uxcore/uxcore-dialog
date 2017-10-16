@@ -2,10 +2,13 @@ import expect from 'expect.js';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { assign } from 'lodash';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
 import $ from 'jquery';
 import Dialog from '../src';
 import Button from 'uxcore-button';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 const appendElementToDOM = (id) => {
   const div = document.createElement('div');
@@ -90,14 +93,14 @@ describe('Dialog', () => {
   describe('Render Function Test', () => {
     it('should correctly render the title', () => {
       const j = getDialog({ title: 'hello', htmlClassName: 'kuma-test-diag' });
-      j.node.componentWillUpdate(j.node.props);
+      j.instance().componentWillUpdate(j.instance().props);
       expect(j.prop('className')).to.contain('our-dialog');
     });
 
     it('should get the onClose prop', (done) => {
       const onClose = () => done();
       const dialog = getDialog({ title: 'hello', onCancel: onClose });
-      dialog.component.props.props.onCancel();
+      dialog.instance().props.onCancel();
     });
 
     it('should get the visible prop', (done) => {
