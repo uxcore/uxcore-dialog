@@ -7,10 +7,12 @@ import React from 'react';
 import classnames from 'classnames';
 import assign from 'object-assign';
 import Icon from 'uxcore-icon';
+import PropTypes from 'prop-types';
 
 import RcDialog from './RcDialog';
 import confirm from './confirm';
 import i18n from './i18n';
+
 
 function noop() {
 }
@@ -129,10 +131,10 @@ export default class Dialog extends React.Component {
 }
 
 Dialog.propTypes = {
-  onCancel: React.PropTypes.func,
-  onOk: React.PropTypes.func,
-  htmlClassName: React.PropTypes.string,
-  getContainer: React.PropTypes.func,
+  onCancel: PropTypes.func,
+  onOk: PropTypes.func,
+  htmlClassName: PropTypes.string,
+  getContainer: PropTypes.func,
 };
 
 Dialog.defaultProps = {
@@ -142,7 +144,7 @@ Dialog.defaultProps = {
   onOk: noop,
   locale: 'zh-cn',
   onCancel: noop,
-  width: 520,
+  width: '520px',
   transitionName: 'dialogSlideDown',
   maskTransitionName: 'dialogFade',
   confirmLoading: false,
