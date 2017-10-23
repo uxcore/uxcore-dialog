@@ -4,6 +4,10 @@
 
 ## 0.7.3
 
+- `FIXED` update to react 15.x
+
+## 0.7.3
+
 - `FIXED` fix server render bug
 
 ## 0.7.2
@@ -45,7 +49,7 @@
 - `NEW` add test case
 
 ## 0.4.5
-- `CHANGED` default texts of buttons change 
+- `CHANGED` default texts of buttons change
 
 ## 0.4.4
 - `FIXED` position bug in IE browser
@@ -62,7 +66,7 @@
 
 ## 0.4.0
 - `NEW` upgrade to rc-dialog@0.6.2
-- `NEW` support center vertically 
+- `NEW` support center vertically
 - `FIXED` when confirmbox's title or content is english words, the line would not break.  
 
 ## 0.3.10
@@ -78,8 +82,8 @@
 - `FIXED` confirm content's wrap bug
 
 ## 0.3.6
-- `FIXED` #6 #3 
-- `CHANGED` add props `timer` in confirm 
+- `FIXED` #6 #3
+- `CHANGED` add props `timer` in confirm
 
 ## 0.3.5
 - `FIXED` #12
