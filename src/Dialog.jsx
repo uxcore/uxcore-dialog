@@ -160,7 +160,7 @@ Dialog.info = (props) => {
     icon: <Icon name="tishi-full" />,
     okCancel: false,
   });
-  return confirm(props);
+  return confirm(props, Dialog);
 };
 
 Dialog.success = (props) => {
@@ -168,7 +168,7 @@ Dialog.success = (props) => {
     icon: <Icon name="chenggong-full" />,
     okCancel: false,
   });
-  return confirm(props);
+  return confirm(props, Dialog);
 };
 
 Dialog.error = (props) => {
@@ -176,7 +176,7 @@ Dialog.error = (props) => {
     icon: <Icon name="biaodanlei-tongyongqingchu" />,
     okCancel: false,
   });
-  return confirm(props);
+  return confirm(props, Dialog);
 };
 
 Dialog.confirm = (props) => {
@@ -184,5 +184,5 @@ Dialog.confirm = (props) => {
     icon: <Icon name="jinggao-full" />,
     okCancel: true,
   });
-  return confirm(props);
+  return confirm(props, Dialog);
 };
