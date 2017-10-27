@@ -2,6 +2,10 @@
 
 ---
 
+## 0.7.6
+
+- `CHANGED` remove circular dependencies between Dialog & confirm 
+
 ## 0.7.3
 
 - `FIXED` update to react 15.x
