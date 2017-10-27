@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import assign from 'object-assign';
 import React from 'react';
 
-import Dialog from './Dialog';
 import i18n from './i18n';
 
 
-export default function (props = {}) {
+export default function (props = {}, Dialog) {
   const htmlNode = document.documentElement;
   const supportClassList = !!htmlNode.classList;
   const div = document.createElement('div');
