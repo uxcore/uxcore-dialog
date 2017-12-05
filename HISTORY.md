@@ -2,6 +2,9 @@
 
 ---
 
+## 0.7.7
+- `FIXED` fixed iusse #28 #27 #20 #24
+
 ## 0.7.6
 
 - `CHANGED` remove circular dependencies between Dialog & confirm 
