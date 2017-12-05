@@ -127,7 +127,7 @@ export default function (props = {}, Dialog) {
   ReactDOM.render(
     <Dialog
       prefixCls="kuma-dlg"
-      className="kuma-dlg-confirm"
+      className={`kuma-dlg-confirm ${newProps.className}`}
       onCancel={onCancel}
       visible
       closable

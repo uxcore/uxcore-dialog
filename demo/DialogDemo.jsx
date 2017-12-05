@@ -1,5 +1,6 @@
 import React from 'react';
 import Dialog from '../src/index';
+import Icon from 'uxcore-icon';
 
 const confirm = Dialog.confirm;
 
@@ -200,6 +201,8 @@ function info(autoClose) {
     title: '这是一条通知信息',
     content: '一些附加信息一些附加信息一些附加信息',
     locale: 'en-us',
+    icon: <Icon name="shouye" style={{ fontSize: '48px', lineHeight: '48px' }} />,
+    className: 'custom-class',
     onOk() { },
     timer: autoClose ? 2000 : false,
     htmlClassName: 'xxx',

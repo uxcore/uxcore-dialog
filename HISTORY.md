@@ -2,6 +2,11 @@
 
 ---
 
+## 0.7.7
+- `FIXED` iusse #28 #20  confirm 类图标可自定义图标，可以使用*icon(推荐)*和*iconClassName*
+- `FIXED` iusse #27 Dialog.xxx用法支持className
+- `FIXED` iusse #24 去除kuma-dlg-title的margin，改用padding
+
 ## 0.7.6
 
 - `CHANGED` remove circular dependencies between Dialog & confirm 
