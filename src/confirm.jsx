@@ -30,9 +30,7 @@ export default function (props = {}) {
       if (supportClassList) {
         htmlNode.classList.remove(newProps.htmlClassName);
       } else {
-        let cls = htmlNode.className;
-        cls = cls.replace(new RegExp(`\\s?${newProps.htmlClassName}`), '');
-        htmlNode.className = cls;
+        htmlNode.className = htmlNode.className.replace(new RegExp(`\\s?${newProps.htmlClassName}`), '');
       }
     }
     ReactDOM.unmountComponentAtNode(div);

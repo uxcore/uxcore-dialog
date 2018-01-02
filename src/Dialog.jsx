@@ -182,7 +182,6 @@ Dialog.error = (props) => {
 Dialog.confirm = (props) => {
   assign(props, {
     icon: <Icon name="jinggao-full" />,
-    okCancel: true,
   });
   return confirm(props);
 };
