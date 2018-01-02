@@ -135,6 +135,8 @@ Dialog.propTypes = {
   onOk: PropTypes.func,
   htmlClassName: PropTypes.string,
   getContainer: PropTypes.func,
+  className: PropTypes.string,
+  iconClassName: PropTypes.string,
 };
 
 Dialog.defaultProps = {
@@ -155,33 +157,38 @@ Dialog.defaultProps = {
   htmlClassName: '',
 };
 
+function adjustIcon(props, defaultIcon) {
+  const icon = props.iconClassName ? <Icon name={props.iconClassName} /> : <Icon name={defaultIcon} />;
+  return props.icon ? props.icon : icon;
+}
+
 Dialog.info = (props) => {
   assign(props, {
-    icon: <Icon name="tishi-full" />,
+    icon: adjustIcon(props, 'tishi-full'),
     okCancel: false,
   });
-  return confirm(props);
+  return confirm(props, Dialog);
 };
 
 Dialog.success = (props) => {
   assign(props, {
-    icon: <Icon name="chenggong-full" />,
+    icon: adjustIcon(props, 'chenggong-full'),
     okCancel: false,
   });
-  return confirm(props);
+  return confirm(props, Dialog);
 };
 
 Dialog.error = (props) => {
   assign(props, {
-    icon: <Icon name="biaodanlei-tongyongqingchu" />,
+    icon: adjustIcon(props, 'biaodanlei-tongyongqingchu'),
     okCancel: false,
   });
-  return confirm(props);
+  return confirm(props, Dialog);
 };
 
 Dialog.confirm = (props) => {
   assign(props, {
     icon: <Icon name="jinggao-full" />,
   });
-  return confirm(props);
+  return confirm(props, Dialog);
 };

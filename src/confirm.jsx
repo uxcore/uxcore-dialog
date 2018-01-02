@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import assign from 'object-assign';
 import React from 'react';
 
-import Dialog from './Dialog';
 import i18n from './i18n';
 
 
-export default function (props = {}) {
+export default function (props = {}, Dialog) {
   const htmlNode = document.documentElement;
   const supportClassList = !!htmlNode.classList;
   const div = document.createElement('div');
@@ -126,7 +125,7 @@ export default function (props = {}) {
   ReactDOM.render(
     <Dialog
       prefixCls="kuma-dlg"
-      className="kuma-dlg-confirm"
+      className={`kuma-dlg-confirm ${newProps.className}`}
       onCancel={onCancel}
       visible
       closable

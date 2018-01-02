@@ -99,7 +99,8 @@ http://uxcore.github.io/components/dialog
 | onCancel | 取消回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭       | function         | 无           |
 | width      | 宽度           | String or Number | 416           |
 | buttonSize  |  按钮的尺寸，'small', 'medium', 'large' 三种可选 | String | 'medium'|
-| icon       | 自定义图标 | Icon Element |  uxcore-icon 的实例，http://uxco.re/components/icon/   |
+| icon       | 自定义图标,可以自定义样式*推荐使用*  | Icon Element |  uxcore-icon 的实例，http://uxco.re/components/icon/ |
+| iconClassName | 图标样式名 | String | kuma-icon-caution |
 | timer | 弹框自动关闭, 2000表示2s以后关闭 | Number, false or null | false |
 | htmlClassName | the className added to html element when dialog is visible | String | '' |
 | okText   | 确认按钮文字 , 0.7.1 版本后支持 | string | - |
