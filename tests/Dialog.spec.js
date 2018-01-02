@@ -88,8 +88,26 @@ describe('Dialog', () => {
     it('should get the initialized state and props', () => {
       expect(w.state('confirmLoading')).to.be(false);
     });
+    it('saveRef should return a function ', () => {
+      w.instance().saveRef('refTest')('refTest');
+      expect(w.instance().refTest).to.be('refTest');
+    });
   });
 
+  describe('Constructor Test with visible fasle', () => {
+    const w = getDialog({
+      visible: false,
+    });
+    w.instance().setState({
+      visible: true,
+    });
+    setTimeout(() => {
+      it('should render when visible is true', (done) => {
+        expect($('.kuma-dlg-wrap').length).to.be(1);
+        done();
+      });
+    }, 1000);
+  });
   describe('Render Function Test', () => {
     it('should correctly render the title', () => {
       const j = getDialog({ title: 'hello', htmlClassName: 'kuma-test-diag' });
@@ -215,11 +233,45 @@ describe('Dialog', () => {
   });
 
   describe('Dialog Helper Method Test', () => {
+    it('Support timer', (done) => {
+      Dialog.info({
+        onOk: () => {},
+        width: 220,
+        timer: 100,
+      });
+      setTimeout(() => {
+        cleanElements();
+        done();
+      }, 300);
+    });
+    it('has no props', (done) => {
+      Dialog.info({
+        title: 'confirm',
+      });
+      setTimeout(() => {
+        $('.kuma-button-secondary').click();
+        setTimeout(() => {
+          cleanElements();
+          done();
+        }, 1000);
+      }, 200);
+    });
+    it('onOk return true', (done) => {
+      Dialog.info({
+        title: 'hello',
+        width: 220,
+        onOk: () => { 
+          return true;
+        }
+      });
+      setTimeout(() => {
+        cleanElements();
+        done();
+      }, 100);
+    });
     it('Dialog.info', (done) => {
       Dialog.info({
         title: 'hello',
-        onOk: () => {},
-        onCancel: () => {},
         width: 220,
       });
       setTimeout(() => {
