@@ -2,6 +2,9 @@
 
 ---
 
+## 0.7.8
+- `FIXED` iusse #31  Dialog.success with timer do not error
+
 ## 0.7.7
 - `FIXED` iusse #28 #20  Dialog.xxx icon can be changed
 - `NEW` iusse #27 Dialog.xxx support `className`

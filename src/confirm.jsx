@@ -33,7 +33,9 @@ export default function (props = {}, Dialog) {
       }
     }
     ReactDOM.unmountComponentAtNode(div);
-    document.body.removeChild(div);
+    if (document.body.contains(div)) {
+      document.body.removeChild(div);
+    }
   }
 
   if (newProps.timer) {
