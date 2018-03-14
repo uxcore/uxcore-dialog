@@ -2,10 +2,10 @@
 
 ---
 ## 0.7.10
-- `FIXED` iusse #31  Dialog.success with timer do not error
+- `FIXED` use `npm run pub` publish the component 
 
 ## 0.7.9
-- `FIXED` iusse #31  Dialog.success with timer do not error
+- `FIXED` use `npm run pub` publish the component 
 
 ## 0.7.8
 - `FIXED` iusse #31  Dialog.success with timer do not error
