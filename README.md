@@ -108,7 +108,6 @@ http://uxcore.github.io/components/dialog
 
 返回值为一个object，具体属性如下：
  - `close` :  一个用于关闭当前dialog的function
- - `dom` :  html DOM 对象，挂载当前dialog的dom对象
 
  使用方法：
 ```javascript

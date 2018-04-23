@@ -1,5 +1,8 @@
 # History
 ---
+## 0.7.12
+- `CHANGED` `Dilog.xxx` do not return the dom element
+---
 ## 0.7.11
 - `FIXED` iusse #32 confirm 类暴露 close 方法 
 ---

@@ -143,6 +143,5 @@ export default function (props = {}, Dialog) {
     </Dialog>, div);
   return {
     close,
-    dom: div,
   };
 }
