@@ -1,5 +1,7 @@
 # History
-
+---
+## 0.7.11
+- `FIXED` iusse #32 confirm 类暴露 close 方法 
 ---
 ## 0.7.10
 - `FIXED` use `npm run pub` publish the component 

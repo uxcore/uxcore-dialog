@@ -141,4 +141,8 @@ export default function (props = {}, Dialog) {
     >
       <div>{body} {footer}</div>
     </Dialog>, div);
+  return {
+    close,
+    dom: div,
+  };
 }
