@@ -1,5 +1,8 @@
 # History
 ---
+## 0.7.13
+- `CHANGED` change the tile color and change the padding of dialog content
+---
 ## 0.7.12
 - `CHANGED` `Dilog.xxx` do not return the dom element
 ---
