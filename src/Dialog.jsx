@@ -37,7 +37,7 @@ const getIEVer = () => {
   return 0;
 };
 
-export default class Dialog extends React.Component {
+class Dialog extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,12 +45,12 @@ export default class Dialog extends React.Component {
     };
   }
 
-  componentWillUpdate(nextProps) {
-    const { htmlClassName } = this.props;
+  componentDidUpdate(prevProps) {
+    const { htmlClassName } = prevProps;
     const htmlNode = document.documentElement;
     const supportClassList = !!htmlNode.classList;
     if (htmlClassName) {
-      if (nextProps.visible) {
+      if (this.props.visible) {
         if (supportClassList) {
           htmlNode.classList.add(htmlClassName);
         } else {
@@ -130,6 +130,8 @@ export default class Dialog extends React.Component {
   }
 }
 
+export default Dialog;
+
 Dialog.propTypes = {
   onCancel: PropTypes.func,
   onOk: PropTypes.func,
@@ -137,6 +139,7 @@ Dialog.propTypes = {
   getContainer: PropTypes.func,
   className: PropTypes.string,
   iconClassName: PropTypes.string,
+  visible: PropTypes.bool,
 };
 
 Dialog.defaultProps = {
