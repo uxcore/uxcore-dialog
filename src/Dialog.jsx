@@ -130,8 +130,6 @@ class Dialog extends React.Component {
   }
 }
 
-export default Dialog;
-
 Dialog.propTypes = {
   onCancel: PropTypes.func,
   onOk: PropTypes.func,
@@ -195,3 +193,5 @@ Dialog.confirm = (props) => {
   });
   return confirm(props, Dialog);
 };
+
+export default Dialog;
