@@ -154,7 +154,9 @@ export class CustomFooter extends React.Component {
         <Dialog
           ref="modal"
           visible={this.state.visible}
-          title="对话框标题" onOk={this.handleOk} onCancel={this.handleCancel.bind(this)}
+          title="对话框标题"
+          onOk={this.handleOk}
+          onCancel={this.handleCancel.bind(this)}
           footer={[
             <button
               key="back"

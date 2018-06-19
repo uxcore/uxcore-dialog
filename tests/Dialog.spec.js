@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { assign } from 'lodash';
 import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import $ from 'jquery';
 import Dialog from '../src';
 import Button from 'uxcore-button';
@@ -19,7 +19,7 @@ const appendElementToDOM = (id) => {
 const cleanElements = () => {
   $('#test-dialog').remove();
   $('.kuma-dlg-wrap').remove();
-}
+};
 
 
 class BasicDemo extends React.Component {
@@ -37,25 +37,25 @@ class BasicDemo extends React.Component {
   render() {
     return (
       <div>
-          <Button onClick={this.show.bind(this)}>显示对话框</Button>
-          <Dialog
-            title="第一个 Dialog"
-            visible={this.state.visible}
-            onOk={() => {
-              this.setState({
-                visible: false,
-              });
-            }}
-            onCancel={() => {
-              this.setState({
-                visible: false,
-              });
-            }}
-          >
-              <p className="test-content-dialog">对话框的内容</p>
-              <p className="test-content-dialog">对话框的内容</p>
-              <p className="test-content-dialog">对话框的内容</p>
-          </Dialog>
+        <Button onClick={this.show.bind(this)}>显示对话框</Button>
+        <Dialog
+          title="第一个 Dialog"
+          visible={this.state.visible}
+          onOk={() => {
+            this.setState({
+              visible: false,
+            });
+          }}
+          onCancel={() => {
+            this.setState({
+              visible: false,
+            });
+          }}
+        >
+          <p className="test-content-dialog">对话框的内容</p>
+          <p className="test-content-dialog">对话框的内容</p>
+          <p className="test-content-dialog">对话框的内容</p>
+        </Dialog>
       </div>
     );
   }
@@ -111,7 +111,7 @@ describe('Dialog', () => {
   describe('Render Function Test', () => {
     it('should correctly render the title', () => {
       const j = getDialog({ title: 'hello', htmlClassName: 'kuma-test-diag' });
-      j.instance().componentWillUpdate(j.instance().props);
+      j.instance().componentDidUpdate(j.instance().props);
       expect(j.prop('className')).to.contain('our-dialog');
     });
 
@@ -149,7 +149,6 @@ describe('Dialog', () => {
     it('should correctly close the dialog', (done) => {
       appendElementToDOM('test-dialog');
       class DialogDemo extends Component {
-
         constructor(props) {
           super(props);
           this.state = {
@@ -189,7 +188,6 @@ describe('Dialog', () => {
     it('should correctly close the dialog with cancel', (done) => {
       appendElementToDOM('test-dialog');
       class DialogDemo extends Component {
-
         constructor(props) {
           super(props);
           this.state = {
@@ -260,9 +258,7 @@ describe('Dialog', () => {
       Dialog.info({
         title: 'hello',
         width: 220,
-        onOk: () => { 
-          return true;
-        }
+        onOk: () => true,
       });
       setTimeout(() => {
         cleanElements();

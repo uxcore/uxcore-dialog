@@ -1,5 +1,8 @@
 # History
 ---
+## 0.8.0
+- `CHANGED` Support React 16.
+---
 ## 0.7.13
 - `CHANGED` change the tile color and change the padding of dialog content
 ---
