@@ -1,5 +1,8 @@
 # History
 ---
+## 0.8.1
+- `CHANGED` support js style export
+------
 ## 0.8.0
 - `CHANGED` Support React 16.
 ---

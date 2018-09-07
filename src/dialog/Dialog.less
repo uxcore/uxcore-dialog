@@ -1,6 +1,6 @@
-@__dialog-prefix-cls: kuma-dlg;
+@__dialogPrefixCls: kuma-dlg;
 
-.@{__dialog-prefix-cls}-wrap {
+.@{__dialogPrefixCls}-wrap {
     position: fixed;
     overflow: auto;
     top: 0;
@@ -15,12 +15,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        .@{__dialog-prefix-cls} {
+        .@{__dialogPrefixCls} {
             top: 0;
         }
     }
 
-    .@{__dialog-prefix-cls} {
+    .@{__dialogPrefixCls} {
         position: relative;
         top: 100px;
         width: auto;
@@ -28,7 +28,7 @@
     }
 }
 
-.@{__dialog-prefix-cls} {
+.@{__dialogPrefixCls} {
 
     &-title {
         padding: 20px 0px 10px;
@@ -76,8 +76,8 @@
     }
     
     
-    &.@{__dialog-prefix-cls}-noheader {
-        .@{__dialog-prefix-cls}-close {
+    &.@{__dialogPrefixCls}-noheader {
+        .@{__dialogPrefixCls}-close {
             right: 16px;
             top: 8px;
             color: @gray-lighter;

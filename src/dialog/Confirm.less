@@ -1,8 +1,8 @@
-@__confirm-prefix-cls: kuma-confirm;
-.@{__dialog-prefix-cls}-confirm {
-  .@{__dialog-prefix-cls}-body {
+@_confirmPrefixCls: kuma-confirm;
+.@{_dialogPrefixCls}-confirm {
+  .@{_dialogPrefixCls}-body {
     padding: 0;
-    .@{__confirm-prefix-cls}-body {
+    .@{_confirmPrefixCls}-body {
       padding: 24px 16px 20px 24px;
       white-space: nowrap;
       >.kuma-icon,
@@ -29,7 +29,7 @@
         }
       }
     }
-    .@{__confirm-prefix-cls}-title {
+    .@{_confirmPrefixCls}-title {
       margin: 0 0 4px 12px;
       display: inline-block;
       vertical-align: middle;
@@ -40,18 +40,18 @@
       white-space: pre-wrap;
       word-wrap: break-word;
     }
-    .@{__confirm-prefix-cls}-body-main {
+    .@{_confirmPrefixCls}-body-main {
       display: inline-block;
       max-width: 240px;
     }
-    .@{__confirm-prefix-cls}-content {
+    .@{_confirmPrefixCls}-content {
       margin-left: 12px;
       font-size: 12px;
       color: @text-secondary-color;
       white-space: pre-wrap;
       word-wrap: break-word;
     }
-    .@{__confirm-prefix-cls}-action {
+    .@{_confirmPrefixCls}-action {
       padding: 12px 16px 16px 24px;
       text-align: right;
       button+button {
