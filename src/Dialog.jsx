@@ -38,19 +38,13 @@ const getIEVer = () => {
 };
 
 class Dialog extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      confirmLoading: false,
-    };
-  }
-
   componentDidUpdate(prevProps) {
     const { htmlClassName } = prevProps;
     const htmlNode = document.documentElement;
     const supportClassList = !!htmlNode.classList;
     if (htmlClassName) {
-      if (this.props.visible) {
+      const { visible } = this.props;
+      if (visible) {
         if (supportClassList) {
           htmlNode.classList.add(htmlClassName);
         } else {
@@ -74,15 +68,17 @@ class Dialog extends React.Component {
   }
 
   handleCancel() {
-    this.props.onCancel();
+    const { onCancel } = this.props;
+    onCancel();
   }
 
   handleOk() {
-    this.props.onOk();
+    const { onOk } = this.props;
+    onOk();
   }
 
   render() {
-    const props = this.props;
+    const { props } = this;
     const locale = i18n[props.locale];
 
     const defaultFooter = [
@@ -108,7 +104,7 @@ class Dialog extends React.Component {
     if (!props.title) {
       className = `${props.className} ${props.prefixCls}-noheader`;
     } else {
-      className = props.className;
+      ({ className } = props);
     }
     const wrapClassName = classnames({
       [props.wrapClassName]: !!props.wrapClassName,
@@ -117,8 +113,8 @@ class Dialog extends React.Component {
     return (
       <RcDialog
         onClose={this.handleCancel.bind(this)}
-        footer={footer}
         {...props}
+        footer={footer}
         className={className}
         wrapClassName={wrapClassName}
         visible={props.visible}
@@ -138,6 +134,14 @@ Dialog.propTypes = {
   className: PropTypes.string,
   iconClassName: PropTypes.string,
   visible: PropTypes.bool,
+  maskClosable: PropTypes.bool,
+  title: PropTypes.string,
+  closable: PropTypes.bool,
+  maskTransitionName: PropTypes.string,
+  transitionName: PropTypes.string,
+  locale: PropTypes.string,
+  wrapClassName: PropTypes.string,
+  prefixCls: PropTypes.string,
 };
 
 Dialog.defaultProps = {
@@ -150,16 +154,18 @@ Dialog.defaultProps = {
   width: '520px',
   transitionName: 'dialogSlideDown',
   maskTransitionName: 'dialogFade',
-  confirmLoading: false,
   visible: false,
   closable: true,
   maskClosable: false,
   title: '',
   htmlClassName: '',
+  getContainer: undefined,
+  iconClassName: undefined,
 };
 
 function adjustIcon(props, defaultIcon) {
-  const icon = props.iconClassName ? <Icon name={props.iconClassName} /> : <Icon name={defaultIcon} />;
+  const icon = props.iconClassName
+    ? <Icon name={props.iconClassName} /> : <Icon name={defaultIcon} />;
   return props.icon ? props.icon : icon;
 }
 

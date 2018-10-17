@@ -1,20 +1,26 @@
 # History
 ---
+
+## 0.8.2
+
+- `FIXED` some eslint error
+- `FIXED` footer cover logic
+
 ## 0.8.1
 - `CHANGED` support js style export
-------
+
 ## 0.8.0
 - `CHANGED` Support React 16.
----
+
 ## 0.7.13
 - `CHANGED` change the tile color and change the padding of dialog content
----
+
 ## 0.7.12
 - `CHANGED` `Dilog.xxx` do not return the dom element
----
+
 ## 0.7.11
 - `FIXED` iusse #32 confirm 类暴露 close 方法 
----
+
 ## 0.7.10
 - `FIXED` use `npm run pub` publish the component 
 
