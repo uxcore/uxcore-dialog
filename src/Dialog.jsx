@@ -113,8 +113,8 @@ class Dialog extends React.Component {
     return (
       <RcDialog
         onClose={this.handleCancel.bind(this)}
-        {...props}
         footer={footer}
+        {...props}
         className={className}
         wrapClassName={wrapClassName}
         visible={props.visible}

@@ -19,7 +19,7 @@ export default function (props = {}, Dialog) {
   }, props);
   const locale = i18n[newProps.locale];
 
-    // 默认为 true，保持向下兼容
+  // 默认为 true，保持向下兼容
   if (!('okCancel' in newProps)) {
     newProps.okCancel = true;
   }
@@ -94,8 +94,12 @@ export default function (props = {}, Dialog) {
     <div className="kuma-confirm-body">
       {icon}
       <div className="kuma-confirm-body-main">
-        <span className="kuma-confirm-title">{newProps.title}</span>
-        <div className="kuma-confirm-content">{newProps.content}</div>
+        <span className="kuma-confirm-title">
+          {newProps.title}
+        </span>
+        <div className="kuma-confirm-content">
+          {newProps.content}
+        </div>
       </div>
     </div>
   );
@@ -104,14 +108,20 @@ export default function (props = {}, Dialog) {
   if (newProps.okCancel) {
     footer = (
       <div className="kuma-confirm-action">
-        <Button type="secondary" size={newProps.buttonSize || 'small'} onClick={onCancel}>{newProps.cancelText || locale.cancel}</Button>
-        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>{newProps.okText || locale.confirm}</Button>
+        <Button type="secondary" size={newProps.buttonSize || 'small'} onClick={onCancel}>
+          {newProps.cancelText || locale.cancel}
+        </Button>
+        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>
+          {newProps.okText || locale.confirm}
+        </Button>
       </div>
     );
   } else {
     footer = (
       <div className="kuma-confirm-action">
-        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>{newProps.okText || locale.isee}</Button>
+        <Button size={newProps.buttonSize || 'small'} onClick={onOk}>
+          {newProps.okText || locale.isee}
+        </Button>
       </div>
     );
   }
@@ -139,8 +149,13 @@ export default function (props = {}, Dialog) {
       htmlClassName={newProps.htmlClassName}
       getContainer={newProps.getContainer}
     >
-      <div>{body} {footer}</div>
-    </Dialog>, div);
+      <div>
+        {body}
+        {' '}
+        {footer}
+      </div>
+    </Dialog>, div,
+  );
   return {
     close,
   };
