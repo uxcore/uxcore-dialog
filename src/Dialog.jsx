@@ -100,12 +100,11 @@ class Dialog extends React.Component {
       </Button>,
     ];
     const footer = props.footer || defaultFooter;
-    let className;
-    if (!props.title) {
-      className = `${props.className} ${props.prefixCls}-noheader`;
-    } else {
-      ({ className } = props);
-    }
+    const className = classnames({
+      [`${props.prefixCls}-noheader`]: !props.title,
+      [props.className]: !!props.className,
+      [`${props.prefixCls}-confirm`]: props.isConfirm,
+    });
     const wrapClassName = classnames({
       [props.wrapClassName]: !!props.wrapClassName,
       'vertical-center-dialog': getIEVer() < 8,
