@@ -72,7 +72,7 @@ http://uxcore.github.io/components/dialog
 | width      | dialog width | String or Number | 520           |
 | footer     | footer of the dialog       | React.Element    |  |
 | closable | whether show close button and click mask to close | Boolean | true |
-| maskClosable | whether click mask to close, this prop will be ignored if set closable prop to false | Boolean | true |
+| maskClosable | whether click mask to close, this prop will be ignored if set closable prop to false | Boolean | false |
 | locale     | 国际化(包括 `zh-cn`, `en-us`, 和 `pl-pl`)    | String     |  `zh-cn` |
 | className | additional className for dialog | string | |
 | wrapClassName | additional className for dialog wrap | string | `vertical-center-dailog` for vertical align the dialog |
