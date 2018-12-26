@@ -56,6 +56,7 @@ export class BasicDemo extends React.Component {
         <Dialog
           title={title}
           locale="en-us"
+          draggable={true}
           visible={this.state.visible}
           onOk={this.handleOk.bind(this)}
           onCancel={this.handleCancel.bind(this)}

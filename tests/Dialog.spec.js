@@ -78,6 +78,8 @@ const getDialog = (options = {}) => {
     prefixCls: 'test',
     title: undefined,
     htmlClassName: '',
+    draggable: false,
+    iconClassName: 'icon-class-name'
   }, options);
   return mount(React.createElement(Dialog, opts));
 };
@@ -86,13 +88,28 @@ describe('Dialog', () => {
   describe('Constructor Test', () => {
     const w = getDialog();
     it('should get the initialized state and props', () => {
-      expect(w.state('confirmLoading')).to.be(false);
+      expect(w.state().dragged).to.be(false);
+      expect(w.props().confirmLoading).to.be(false);
+      expect(w.props().draggable).to.be(false);
+      expect(w.props().iconClassName).to.be('icon-class-name');
     });
     it('saveRef should return a function ', () => {
       w.instance().saveRef('refTest')('refTest');
       expect(w.instance().refTest).to.be('refTest');
     });
   });
+
+  describe('Drag Test', () => {
+    const w = getDialog();
+
+    it('should get the position', () => {
+      w.instance().handleDrag({clientY: 120, clientX: 120 });
+      setTimeout(() => {
+        expect(w.state().contentTop).to.be(120);
+        expect(w.state().contentLeft).to.be(120);
+      }, 1000);
+    })
+  })
 
   describe('Constructor Test with visible fasle', () => {
     const w = getDialog({
