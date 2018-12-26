@@ -78,6 +78,7 @@ const getDialog = (options = {}) => {
     prefixCls: 'test',
     title: undefined,
     htmlClassName: '',
+    draggable: false,
   }, options);
   return mount(React.createElement(Dialog, opts));
 };
@@ -86,7 +87,8 @@ describe('Dialog', () => {
   describe('Constructor Test', () => {
     const w = getDialog();
     it('should get the initialized state and props', () => {
-      expect(w.state('confirmLoading')).to.be(false);
+      expect(w.state().dragged).to.be(false);
+      expect(w.props().confirmLoading).to.be(false);
     });
     it('saveRef should return a function ', () => {
       w.instance().saveRef('refTest')('refTest');

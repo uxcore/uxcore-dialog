@@ -39,7 +39,7 @@ const getIEVer = () => {
 
 class Dialog extends React.Component {
   constructor(props) {
-    super();
+    super(props);
 
     const { top, left } = props.style || {};
     this.state = {
