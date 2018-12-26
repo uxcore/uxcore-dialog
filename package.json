@@ -1,6 +1,6 @@
 {
   "name": "uxcore-dialog",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "uxcore-dialog ui componment for react",
   "main": "build/index.js",
   "scripts": {

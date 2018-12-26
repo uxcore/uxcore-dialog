@@ -1,8 +1,9 @@
 # History
 ---
+## 0.8.6 
+- `CHANGED` supporting drag dialog feature
 
 ## 0.8.2
-
 - `FIXED` some eslint error
 - `FIXED` footer cover logic
 
