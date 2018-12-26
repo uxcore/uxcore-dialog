@@ -38,12 +38,29 @@ const getIEVer = () => {
 };
 
 class Dialog extends React.Component {
+  constructor(props) {
+    super();
+
+    const { top, left } = props.style || {};
+    this.state = {
+      contentTop: top,
+      contentLeft: left,
+      dragged: false,
+    };
+  }
+
   componentDidUpdate(prevProps) {
+    const { visible } = this.props;
     const { htmlClassName } = prevProps;
     const htmlNode = document.documentElement;
     const supportClassList = !!htmlNode.classList;
+
+    // reset the position of dialog in draggable mode
+    if (!prevProps.visible && visible) {
+      this.setState({ dragged: false });
+    }
+
     if (htmlClassName) {
-      const { visible } = this.props;
       if (visible) {
         if (supportClassList) {
           htmlNode.classList.add(htmlClassName);
@@ -75,6 +92,16 @@ class Dialog extends React.Component {
   handleOk() {
     const { onOk } = this.props;
     onOk();
+  }
+
+  handleDrag(e) {
+    const { clientY, clientX } = e;
+
+    this.setState({
+      dragged: true,
+      contentTop: clientY > 0 ? clientY : 0,
+      contentLeft: clientX > 0 ? clientX : 0
+    });
   }
 
   render() {
@@ -109,11 +136,41 @@ class Dialog extends React.Component {
       [props.wrapClassName]: !!props.wrapClassName,
       'vertical-center-dialog': getIEVer() < 8,
     });
+
+    const { title, style, draggable, ...otherProps } = this.props;
+    const { dragged, contentTop, contentLeft } = this.state;
+
+    let newTitle = title;
+    let newStyle = { ...style };
+
+    if (draggable) {
+      if (dragged) {
+        newStyle = {
+          ...newStyle,
+          position: 'absolute',
+          top: contentTop,
+          left:contentLeft,
+        }
+      }
+      
+      newTitle = (
+        <div
+          draggable={true}
+          onDrag={this.handleDrag.bind(this)}
+          onDragEnd={this.handleDrag.bind(this)}
+        >
+          {title}  
+        </div>
+      );
+    }
+
     return (
       <RcDialog
         onClose={this.handleCancel.bind(this)}
         footer={footer}
-        {...props}
+        {...otherProps}
+        title={newTitle}
+        style={newStyle}
         className={className}
         wrapClassName={wrapClassName}
         visible={props.visible}
@@ -141,6 +198,7 @@ Dialog.propTypes = {
   locale: PropTypes.string,
   wrapClassName: PropTypes.string,
   prefixCls: PropTypes.string,
+  draggable: PropTypes.bool,
 };
 
 Dialog.defaultProps = {
@@ -160,6 +218,7 @@ Dialog.defaultProps = {
   htmlClassName: '',
   getContainer: undefined,
   iconClassName: undefined,
+  draggable: false,
 };
 
 function adjustIcon(props, defaultIcon) {

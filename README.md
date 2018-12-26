@@ -80,6 +80,7 @@ http://uxcore.github.io/components/dialog
 | zIndex |  | Number | |
 | bodyStyle | body style for dialog body element.Such as height | Number | {} |
 | htmlClassName | the className added to html element when dialog is visible | String | '' |
+| draggable | drag title for resetting the position of dialog | Boolean | false |
 
 ### Dialog.xxx()
 
