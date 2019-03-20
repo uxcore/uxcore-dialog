@@ -1,6 +1,9 @@
 # History
 ---
 ## 0.8.6 
+- `CHANGED` supporting cancel dom event
+
+## 0.8.6 
 - `CHANGED` supporting drag dialog feature
 
 ## 0.8.2

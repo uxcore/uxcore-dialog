@@ -84,9 +84,9 @@ class Dialog extends React.Component {
     };
   }
 
-  handleCancel() {
+  handleCancel(e) {
     const { onCancel } = this.props;
-    onCancel();
+    onCancel(e);
   }
 
   handleOk() {
