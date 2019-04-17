@@ -1,10 +1,6 @@
 import RcDialog from 'rc-dialog';
 
-const defaultGetContainer = () => {
-  const container = document.createElement('div');
-  document.body.appendChild(container);
-  return container;
-};
+const defaultGetContainer = () => document.body;
 
 class NewDialog extends RcDialog {
   constructor(props) {

@@ -1,5 +1,8 @@
 # History
 ---
+## 0.8.7
+- `CHANGED` remove empty div when dialog is removed
+---
 ## 0.8.6 
 - `CHANGED` supporting cancel dom event
 
