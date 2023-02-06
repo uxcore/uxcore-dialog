@@ -106,7 +106,9 @@ class Dialog extends React.Component {
 
   render() {
     const { props } = this;
-    const locale = i18n[props.locale];
+    const { context={} } = this;
+    const { localePack={} } = context;
+    const locale = {...i18n[props.locale], ...localePack.Dialog, ...props.localePack}; //merge语言包默认组件props优先级大于ConfigProvider传递语言包大于locale语言环境对应语言包大于默认语言包
 
     const defaultFooter = [
       <Button
@@ -199,6 +201,7 @@ Dialog.propTypes = {
   wrapClassName: PropTypes.string,
   prefixCls: PropTypes.string,
   draggable: PropTypes.bool,
+  localePack: PropTypes.object,
 };
 
 Dialog.defaultProps = {
@@ -219,6 +222,7 @@ Dialog.defaultProps = {
   getContainer: undefined,
   iconClassName: undefined,
   draggable: false,
+  localePack: undefined
 };
 
 function adjustIcon(props, defaultIcon) {
@@ -257,5 +261,9 @@ Dialog.confirm = (props) => {
   });
   return confirm(props, Dialog);
 };
+
+Dialog.contextTypes = {
+  localePack: PropTypes.object
+}
 
 export default Dialog;
