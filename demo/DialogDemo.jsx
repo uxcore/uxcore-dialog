@@ -1,6 +1,7 @@
 import React from 'react';
 import Dialog from '../src/index';
 import Icon from 'uxcore-icon';
+import UxcoreConfigProvider from 'uxcore-config-provider';
 
 const confirm = Dialog.confirm;
 
@@ -41,7 +42,11 @@ export class BasicDemo extends React.Component {
       title = false;
     }
     return (
-      <div>
+      <UxcoreConfigProvider localePack={{
+        Dialog:{
+          'ok':'可以'
+        }
+      }}>
         <label>
           <input
             type="checkbox"
@@ -71,7 +76,7 @@ export class BasicDemo extends React.Component {
           <p>对话框的内容</p>
           <p>对话框的内容</p>
         </Dialog>
-      </div>
+      </UxcoreConfigProvider>
     );
   }
 }
