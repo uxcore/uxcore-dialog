@@ -1,8 +1,12 @@
 # History
 ---
+
+## 0.8.10
+- `CHANGED` support locale pack
+
 ## 0.8.8
 - `CHANGED` remove empty div when dialog is removed
----
+  
 ## 0.8.6 
 - `CHANGED` supporting cancel dom event
 
