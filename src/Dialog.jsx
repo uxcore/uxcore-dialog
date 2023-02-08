@@ -106,9 +106,9 @@ class Dialog extends React.Component {
 
   render() {
     const { props } = this;
-    const { context={} } = this;
-    const { localePack={} } = context;
-    const locale = {...i18n[props.locale], ...localePack.Dialog, ...props.localePack}; //merge语言包默认组件props优先级大于ConfigProvider传递语言包大于locale语言环境对应语言包大于默认语言包
+    const { context = {} } = this;
+    const { localePack = {} } = context;
+    const locale = { ...i18n[props.locale], ...localePack.Dialog, ...props.localePack }; //merge语言包默认组件props优先级大于ConfigProvider传递语言包大于locale语言环境对应语言包大于默认语言包
 
     const defaultFooter = [
       <Button
