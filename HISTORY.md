@@ -1,6 +1,9 @@
 # History
 ---
 
+## 0.8.11
+- `CHANGED` 新增locale key en_US zh_CN (#44)
+
 ## 0.8.10
 - `CHANGED` support locale pack
 
