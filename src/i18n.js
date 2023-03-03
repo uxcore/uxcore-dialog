@@ -1,4 +1,4 @@
-module.exports = {
+const LANG_PACK =  {
   'zh-cn': {
     ok: '确定',
     cancel: '取消',
@@ -24,3 +24,6 @@ module.exports = {
     confirm: 'tak',
   },
 };
+LANG_PACK['en_US'] = LANG_PACK['en-us'];
+LANG_PACK['zh_CN'] = LANG_PACK['zh-cn'];
+module.exports = LANG_PACK;
