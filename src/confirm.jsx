@@ -142,6 +142,7 @@ export default function (props = {}, Dialog) {
       visible
       closable
       title=""
+      locale={newProps.locale}
       footer=""
       transitionName={newProps.transitionName}
       maskTransitionName={newProps.maskTransitionName}
